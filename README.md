@@ -21,11 +21,7 @@ LabProject_diffusion/
 │       ├── CLEAN_main.pdf
 │       ├── CLEAN_tutorial_sbm.pdf
 │       ├── .claude/commands/clean-replicate.md
-│       └── data/                                        # Please replace this with new replication data
-│           ├── nyhan-montgomery.R          
-│           ├── nyhan-montgomery.do         
-│           ├── dataPrep/                     
-│           └── data/                       
+│       └── data/                                        # Please replace this with new replication data             
 └── .claude/commands/                         # Claude Code slash commands
     ├── clean-replicate.md
     └── paper-candidates.md
