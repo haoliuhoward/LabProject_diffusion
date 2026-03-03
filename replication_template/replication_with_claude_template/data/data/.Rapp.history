@@ -1,0 +1,411 @@
+Created BJN 7/10/12#
+#JMM TO REVISE#
+# Jmm Revision on 9-11#
+setwd("~/Dropbox/Consultant data analysis (1)/Clean data folder/data/")#
+library(spdep)#
+library(foreign)#
+#
+adjMat <- read.dta("allCand-log-before-proj.dta")#
+adjMat<-as.matrix(adjMat, rownames.force = FALSE)#
+#adjMat <- (adjMat>0)*1#
+DruckData <- read.dta("DruckmanFinal2.dta")
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/")
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=TRUE)#
+dev.off()#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=TRUE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))
+length(consultnames)
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names.csv",header=FALSE))#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names.csv",header=FALSE))#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+dvs<-as.matrix(read.csv("canddata-jd-names-d02-dvs.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/")#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=TRUE)#
+dev.off()#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-clean.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02.csv",header=FALSE)[,1])#
+dvs<-as.matrix(read.csv("canddata-jd-names-d02-dvs.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+network.vertex.names(adjnet)<-c(candnames[,1],consd02names[,1])#
+#
+pdf(file="adjnet-d02.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="black",label=network.vertex.names(adjnet),displayisolates=FALSE,interactive=TRUE)#
+dev.off()#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]
+length(candnames)
+candnames
+inclvec
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names.csv",header=FALSE))#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+dvs<-as.matrix(read.csv("canddata-jd-names-d02-dvs.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+candnames
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-clean.csv",header=FALSE)[,1])#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+dvs<-as.matrix(read.csv("canddata-jd-names-d02-dvs.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability
+library(network)#
+library(foreign)#
+library(sna)#
+#
+#FIGURES 1 and 2#
+#
+#plot candidate consultant data#
+#LARGEST CONNECTED COMPONENTS ONLY#
+#
+#largest candidate component#
+adjjd<-read.csv("consultcandmatrix-jd-d02-largest-clean.csv",header=FALSE)#
+adj<-as.matrix(adjjd)#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-largest.csv",header=FALSE)[,1])#
+consd02names<-as.matrix(read.csv("consultdata-jd-names-d02-largest-clean.csv",header=FALSE)[,1])#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consd02names))#
+network.vertex.names(adjnet)<-c(consd02names[,1],candnames[,1])#
+consvec<-c(rep(1,length(consd02names)),rep(0,length(candnames)))#
+set.vertex.attribute(adjnet,"consultant",consvec)#
+#
+pdf(file="adjnet-d02-largest.pdf",width=11,height=8)#
+plot(adjnet,vertex.col="consultant",cex=.5,displayisolates=TRUE,label=network.vertex.names(adjnet),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+adjjd<-read.dta("consultcandmatrix-jd-d02.dta")#
+adj<-as.matrix(adjjd[,-1])#
+candnames<-as.matrix(read.csv("canddata-jd-names-d02-clean.csv",header=FALSE)[,1])#
+consultnames<-as.matrix(read.csv("consultdata-jd-names.csv",header=FALSE))#
+dvs<-as.matrix(read.csv("canddata-jd-names-d02-dvs.csv",header=FALSE))#
+adjnet<-network(adj,directed=FALSE,bipartite=length(consultnames))#
+cand<-t(as.sociomatrix.sna(adjnet)) %*% as.sociomatrix.sna(adjnet)#
+candnet<-network(cand,directed=FALSE,bipartite=FALSE)#
+network.vertex.names(candnet)<-c(candnames)#
+candnet.largest<-network(component.largest(candnet,connected="weak",result="graph"),directed=FALSE,bipartite=FALSE)#
+inclvec<-component.largest(candnet,connected="weak")#
+newnames<-cbind(candnames,inclvec)[inclvec==TRUE,]#
+candnet.largestd02<-candnet.largest#
+network.vertex.names(candnet.largestd02)<-c(newnames)#
+newdvs<-cbind(dvs,inclvec)[inclvec==TRUE,]#
+network.vertex.names(candnet.largest)<-c(newnames[,1])#
+pdf(file="candnet-d02.pdf",width=11,height=8)#
+plot(candnet.largest,vertex.col="white",label=network.vertex.names(candnet.largest),interactive=FALSE)#
+dev.off()#
+#NOTE: interactive feature was used to adjust layout to maximize readability#
+#
+#TABLE 2#
+#
+#TABLE 3#
+#
+#TABLE 4#
+#
+#TABLE SI-1#
+#
+#TABLE SI-2#
+#
+#TABLE SI-3#
+#
+#TABLE SI-4#
+#
+#TABLE SI-5#
+#
+#FIGURE SI-3

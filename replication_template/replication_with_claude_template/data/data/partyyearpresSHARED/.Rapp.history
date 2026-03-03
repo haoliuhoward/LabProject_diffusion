@@ -1,0 +1,1969 @@
+library(geepack)
+help(geeglm)
+library(Geepack)
+library(geepack)
+help(geeglm)
+TOFIAS NYHAN - CONGRESSIONAL NETWORKS-LEADERSHIP PROJECT##
+#MARCH 2012##
+#
+# get modularity from cosponsorship networks using roll call vote clusters as partitions.#
+#
+#clear out the cruft#
+rm(list = ls())#
+#
+#set directory automagically#
+theDir<-getwd()#
+if (regexpr("tof",theDir)!=-1)   setwd("/Users/tof/Dropbox/Projects/Member-to-member contributions/(4) analysis/")#
+if (regexpr("nyhan",theDir)!=-1) setwd("/Users/brendannyhan/Documents/Dropbox/Member-to-member contributions/(4) analysis/")#
+getwd() #prove it#
+#
+#file.remove("rc3clustermod.txt") #delete data file before re-running due to append command#
+#
+#load packages #
+library(foreign)#
+library(igraph0)#
+library(gregmisc) #Load Permutation Library#
+#
+#initialize chamber#
+senate<-0#
+#
+#chamber loop starter#
+while (senate < 2) {#
+if (senate==1){chmbr<-"h"} else{chmbr<-"s"}#
+if (senate==1){chamber<-"house"} else{chamber<-"senate"}#
+#
+#initialize party#
+partyid<-100#
+party<-"d"#
+#
+#party loop starter#
+while (partyid < 201) {#
+#
+#initialize year#
+year <- 1986#
+#
+while (year < 2007) {#
+#
+edgelocal<-paste("igraph.",chmbr,".",partyid,".",year,".ncol" ,sep="")#
+g <- read.graph(edgelocal, format="ncol", directed="true")#
+#
+nodelocal<-paste("ideofac3-nodes-",chamber,"-",partyid,".",year,".dta",sep="")#
+nodes<- read.dta(nodelocal)#
+#
+#ATTACH some node attributes#
+i = 0#
+while (i < length(V(g))) {#
+#
+theidno <- V(g)[i]$name#
+#
+j=1#
+while (j <= length(nodes$ideofact) ) {#
+#
+if (theidno == nodes$idno[j]){#
+#
+V(g)[i]$ideofact<-nodes$ideofact[j]#
+#
+j = 500#
+}#
+#
+j = j + 1#
+}#
+i = i +1#
+}#
+#CALCULATE MODULARITY SCORES for the roll call cluster partitions #
+#
+ideomod <- modularity(g, V(g)$ideofact, weights = E(g)$weight)#
+match <- length(nodes$ideofact)==length(V(g))#
+#
+refideomod<-rep(NA,length=1000)#
+nperms<-1000#
+#
+for(mm in 1:nperms){#
+factions<-V(g)$ideofact#
+fakefactions<-sample(factions) #Permute Group Assignments#
+refideomod[mm]<-modularity(g, fakefactions, weights = E(g)$weight) #Modularity with Random assignment#
+}#
+#
+minfakemod<-min(refideomod)#
+maxfakemod<-max(refideomod)#
+fakemod025<-quantile(refideomod,.025)#
+fakemod975<-quantile(refideomod,.975)#
+fakemod005<-quantile(refideomod,.005)#
+fakemod995<-quantile(refideomod,.995)#
+#
+#WRITE OUTPUT#
+ideomoddata<-cbind(senate,partyid,year,ideomod,match,minfakemod,maxfakemod,fakemod025,fakemod975,fakemod005,fakemod995)#
+write.table(ideomoddata,file="rc3clustermod.txt",append=TRUE,col.names=FALSE) #
+rm(ideomoddata)#
+#
+#year loop ender#
+year<-year+2#
+}#
+#party loop ender#
+partyid<-partyid+100#
+party<-"r"#
+}#
+#chamber loop ender#
+senate<-senate+1#
+chmbr<-"s"#
+}#
+#
+#end script
+partyid
+year
+edgelocal<-paste("igraph.",chmbr,".",partyid,".",year,".ncol" ,sep="")#
+g <- read.graph(edgelocal, format="ncol", directed="true")
+library(sna)
+library(network)
+?permvec
+?rperm
+library(igraph)
+?rewire
+?rewire.ud
+?rewire
+?modularity
+?save.image
+install.packages("stargazer")
+library(stargazer)
+matrix<-c(2,2,2,2)
+matrix
+as.matrix(2,2,2,2)
+?matrix
+a<-as.matrix(data=c(2,2,2,2),nrow=2,ncol=2)
+a<-as.matrix(data=(2,2,2,2),nrow=2,ncol=2)
+a<-as.matrix((2,2,2,2),nrow=2,ncol=2)
+a<-matrix((2,2,2,2),nrow=2,ncol=2)
+a<-matrix(list=(2,2,2,2),nrow=2,ncol=2)
+a<-matrix(b,nrow=2,ncol=2)
+b<-c(a,a,a,a)
+b<-c(2,3,4,5)
+b
+a<-matrix(b,nrow=2,ncol=2)
+a
+col1vec<-as.vector(a[,1])
+col1vec
+?blockTools
+library(blockTools)
+?blockTools
+goodbye<-rbind(rbind(rep(NA,4),rep(NA,4)),cbind(t(rep("Hey",3)),""))
+goodbye
+If the effect of news pressure is driven by this instrument that only has 27 events in 31 years, and no scandals happen after a major event, then we could only observe a negative effect in this case. In a sense, this instrument is forcing news pressure to take on high values in 27 cases where the outcome is 0, thereby ensuring a nonpositive result.#
+#
+library(sem)#
+library(AER)#
+#
+N <- 1670#
+z <- rnorm(N)#
+u <- rnorm(N) #
+x <- 1 + z + u + rnorm(N) # x is correlated with the error term u (endogeneity) and the instrument z#
+y <- 1 + x + u#
+iv2 <- tsls(y  ~ x, instruments = ~ z)#
+summary(iv2)
+load("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/falsification.RData")
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(51.165, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(51.2, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(52, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(52, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 51.117, lty=2)#
+text(52, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.159, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 51.117, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.159, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 51.117, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+Created BJN 7/10/12#
+#JMM TO REVISE#
+# Jmm Revision on 9-11#
+#BJN fixed#
+# Jmmm Complete revision for new results 11/28#
+#
+#setwd("/Users/bnyhan/Downloads")#
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/")#
+#setwd("~/Dropbox/Consultant data analysis (1)/Clean data folder/data/")#
+library(spdep)#
+library(foreign)#
+library(spatialprobit)#
+library(xtable)#
+options(digits=10)#
+#
+## Different adjacency matrices #
+adjMatLog <- read.dta("allCand-log-after-proj.dta") #logged dolllars#
+adjMatLog<-as.matrix(adjMatLog, rownames.force = FALSE)#
+adjMatBin <- (adjMatLog>0)*1 #binary#
+adjMatShared<- read.dta("allCand-shared-cons.dta") #Count of shared consultants#
+adjMatShared <- as.matrix(adjMatShared, rownames.force = FALSE)#
+#
+## Read in the data#
+DruckData <- read.dta("DruckmanFinal2.dta")#
+#
+## Make some additional needed variables#
+DruckData$democrat04 <- DruckData$y2004*DruckData$democrat#
+DruckData$democrat06 <- DruckData$y2006*DruckData$democrat#
+#
+attach(DruckData)#
+region<-NA#
+region[statename=="Maine" | statename=="Massachusetts" | statename=="New Hampshire" | statename=="Rhode Island" | statename=="Vermont"] <- 0#
+region[statename=="Connecticut" | statename=="Delaware" | statename=="New Jersey" | statename == "New York" | statename=="Pennsylvania"] <- 1#
+region[statename=="Illinois" | statename=="Indiana" | statename=="Michigan" | statename=="Ohio" | statename=="Wisconsin"] <- 2#
+region[statename=="Iowa" | statename == "Kansas" | statename=="Minnesota" | statename=="Nebraska" | statename=="South Dakota" | statename=="North Dakota"] <- 3#
+region[statename=="Alabama" | statename == "Arkansas" | statename == "Florida"| statename == "Georgia" | statename=="Louisiana" | statename=="Mississippi" | statename=="North Carolina" | statename=="South Carolina" | statename=="Texas" | statename=="Virginia"] <- 4#
+region[statename=="Kentucky" | statename=="Maryland" | statename == "Missouri" | statename=="Oklahoma" | statename=="Tennessee" | statename=="West Virginia"] <- 5#
+region[statename=="Arizona" | statename=="Colorado" | statename=="Idaho" | statename == "Montana" | statename=="Nevada" | statename=="New Mexico" | statename=="Utah" | statename=="Wyoming"] <- 6#
+region[statename=="California" | statename=="Oregon" | statename=="Washington"] <- 7#
+region[statename=="Alaska"| statename == "Hawaii"] <- 7#
+detach(DruckData)#
+DruckData$region <- region#
+#
+DruckData$newdist <- DruckData$disrepvote#
+DruckData$newdist[DruckData$democrat==1] <- 100-DruckData$newdist[DruckData$democrat==1]#
+#
+#Make a version of newdist that is categorical#
+newdistAlt <- rep(0, nrow(DruckData))#
+newdistAlt[DruckData$newdist<=51&DruckData$newdist>42] <- 1#
+newdistAlt[DruckData$newdist<=59&DruckData$newdist>51] <- 2#
+newdistAlt[DruckData$newdist>59] <- 3#
+DruckData$newdistAlt <- newdistAlt#
+#
+# Incumebnt#
+DruckData$incumbent <- 1#
+DruckData$incumbent[DruckData$chall==1 | DruckData$open==1]<-0#
+#
+varselection <- c("y2004", "y2006", "democrat", "democrat04",#
+                  "democrat06", "chall", "open", "female",#
+                  "disrepvote", "senate", "isssal2", "demdisrepvote",#
+                  "oppgoneg", "fraised2", "goneg", "negperson",#
+                  "negiss", "risk", "issueowner", "bioreason",#
+                  "biooccup", "biofamil2", "poll", "cooks", "bioorg", "biotown",#
+                  "positions", "endorse", "partybann","cfscore",#
+                  "region", "incumbent", "newdist", "newdistAlt")#
+#
+DruckData.Reduced <- DruckData[,varselection]#
+my.spat3<-function(form, adj.matrix , data = DruckData.Reduced, selector){#
+  form=this.mod#
+  startlist<-adj.matrix#
+  dataset<-data#
+  startlist0<-startlist[selector, selector]#
+  final.list<-mat2listw(startlist0, style="W")#
+#  final.list <- nb2listw(final.list, glist=NULL, style="W", zero.policy=TRUE)#
+  final.data<-dataset[selector,]#
+  (summary(#
+           lagsarlm(form, data=final.data, listw=final.list, zero.policy=TRUE)#
+           )#
+   )#
+}#
+#
+#JACOB MESSING AROUND HERE#
+#str((mat2listw(adjMatShared)))#
+#
+#final.data<-dataset[selector,]#
+#
+#mat2listw(adjMatShared, style="W")$weights[[543]]#
+#mat2listw(adjMatBin, style="W")$weights[[543]]#
+#mat2listw(adjMatLog, style="W")$weights[[543]]#
+#nb2listw(mat2listw(adjMatLog)$neighbour, glis=NULL, style="W", zero.policy=TRUE)$weights[[543]]#
+#nb2listw(mat2listw(adjMatBin)$neighbour, glis=NULL, style="W", zero.policy=TRUE)$weights[[543]]#
+#
+                                        # Main results#
+#
+### Table 1: Column 1 #
+this.mod <- risk ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region) #
+t1c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)))#
+t1c1#
+#
+### Table 1: Column 2 #
+this.mod <- risk ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region) + cfscore#
+t1c2<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist) & !is.na(DruckData.Reduced$cfscore)))#
+t1c2#
+#
+### Table 1: Column3#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open + chall +   factor(newdistAlt) + factor(region) + isssal2#
+t1c3<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$issueowner) & !is.na(DruckData.Reduced$newdist)))#
+t1c3#
+#
+### Table 1: Column4#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open + chall +   factor(newdistAlt) + factor(region) + cfscore + isssal2 + cfscore#
+t1c4<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$issueowner) & !is.na(DruckData.Reduced$newdist) & !is.na(DruckData.Reduced$cfscore)))#
+t1c4#
+t1Out<-matrix(NA, nrow=18*2+5, ncol=4)#
+#
+t1Out[seq(1, 16*2, by=2) ,1]<-(t1c1$coefficients)#
+t1Out[seq(2, 16*2, by=2) ,1]<-t1c1$rest.se#
+t1Out[37,1]<-  t1c1$rho#
+t1Out[38,1]<- t1c1$rho.se#
+t1Out[39,1]<-t1c1$LR1[[1]][[1]]#
+t1Out[40,1]<-t1c1$LR1[[3]][[1]]#
+t1Out[41,1]<-length(t1c1$fitted.values)#
+t1Out[seq(1, 17*2, by=2) ,2]<-(t1c2$coefficients)#
+t1Out[seq(2, 17*2, by=2) ,2]<-t1c2$rest.se#
+t1Out[37,2]<-  t1c2$rho#
+t1Out[38,2]<- t1c2$rho.se#
+t1Out[39,2]<-t1c2$LR1[[1]][[1]]#
+t1Out[40,2]<-t1c2$LR1[[3]][[1]]#
+t1Out[41,2]<-length(t1c2$fitted.values)#
+rownames(t1Out)<-1:41#
+rownames(t1Out)[seq(1, 18*2, by=2)]<-  rownames(t1c4$Coef)#
+rownames(t1Out)[37]<-"rho"#
+rownames(t1Out)[38]<-"asymp.se"#
+rownames(t1Out)[39]<-"LR.stat"#
+rownames(t1Out)[40]<-"p-value"#
+rownames(t1Out)[41]<-"N"#
+t1Out[c(seq(1, 16*2, by=2), 35)  ,3]<-(t1c3$coefficients)#
+t1Out[c(seq(2, 16*2, by=2),36) ,3]<-t1c3$rest.se#
+t1Out[37,3]<-  t1c3$rho#
+t1Out[38,3]<- t1c3$rho.se#
+t1Out[39,3]<-t1c3$LR1[[1]][[1]]#
+t1Out[40,3]<-t1c3$LR1[[3]][[1]]#
+t1Out[41,3]<-length(t1c3$fitted.values)#
+t1Out[seq(1, 18*2, by=2) ,4]<-(t1c4$coefficients)#
+t1Out[seq(2, 18*2, by=2) ,4]<-t1c4$rest.se#
+t1Out[37,4]<-  t1c4$rho#
+t1Out[38,4]<- t1c4$rho.se#
+t1Out[39,4]<-t1c4$LR1[[1]][[1]]#
+t1Out[40,4]<-t1c4$LR1[[3]][[1]]#
+t1Out[41,4]<-length(t1c4$fitted.values)#
+t1Out#
+(xtable(t1Out, digits=3))
+Table A1: Column 1 - non incumbents, risk, logged#
+this.mod <- risk ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) #
+a1c1<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A1: Column 2 - difficult district, risk, logged#
+this.mod <- risk ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) #
+a1c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table A1: Column 3 - non incumbents, risk, binary#
+this.mod <- risk ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) #
+a1c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A1: Column 4 - difficult district, risk, binary#
+this.mod <- risk ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) #
+a1c4<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)
+a1Out<-matrix(NA, nrow=16*2+5, ncol=4)#
+rownames(a1Out)<-c(1:(16*2+5))#
+rownames(a1Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2))]<-  rownames(a1c1$Coef)#
+rownames(a1Out)[33]<-"rho"#
+rownames(a1Out)[34]<-"asymp.se"#
+rownames(a1Out)[35]<-"LR.stat"#
+rownames(a1Out)[36]<-"p-value"#
+rownames(a1Out)[37]<-"N"#
+rownames(a1Out)[9]<-"open"#
+a1Out[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2)) ,1]<-a1c1$coefficients#
+a1Out[c(seq(2, 4*2, by=2), seq(6*2, 16*2, by=2)) ,1]<-a1c1$rest.se#
+a1Out[33,1]<-  a1c1$rho#
+a1Out[34,1]<- a1c1$rho.se#
+a1Out[35,1]<-a1c1$LR1[[1]][[1]]#
+a1Out[36,1]<-a1c1$LR1[[3]][[1]]#
+a1Out[37,1]<-length(a1c1$fitted.values)#
+a1Out[c(seq(1, 7*2, by=2), seq(10*2-1, 16*2, by=2)) ,2]<-(a1c2$coefficients)#
+a1Out[c(seq(2, 7*2, by=2), seq(10*2, 16*2, by=2)) ,2]<-a1c2$rest.se#
+a1Out[33,2]<-  a1c2$rho#
+a1Out[34,2]<- a1c2$rho.se#
+a1Out[35,2]<-a1c2$LR1[[1]][[1]]#
+a1Out[36,2]<-a1c2$LR1[[3]][[1]]#
+a1Out[37,2]<-length(a1c2$fitted.values)#
+a1Out[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2)) ,3]<-a1c3$coefficients#
+a1Out[c(seq(2, 4*2, by=2), seq(6*2, 16*2, by=2)) ,3]<-a1c3$rest.se#
+a1Out[33,3]<-  a1c3$rho#
+a1Out[34,3]<- a1c3$rho.se#
+a1Out[35,3]<-a1c3$LR1[[1]][[1]]#
+a1Out[36,3]<-a1c3$LR1[[3]][[1]]#
+a1Out[37,3]<-length(a1c3$fitted.values)#
+a1Out[c(seq(1, 7*2, by=2), seq(10*2-1, 16*2, by=2)) ,4]<-(a1c4$coefficients)#
+a1Out[c(seq(2, 7*2, by=2), seq(10*2, 16*2, by=2)) ,4]<-a1c4$rest.se#
+a1Out[33,4]<-  a1c4$rho#
+a1Out[34,4]<- a1c4$rho.se#
+a1Out[35,4]<-a1c4$LR1[[1]][[1]]#
+a1Out[36,4]<-a1c4$LR1[[3]][[1]]#
+a1Out[37,4]<-length(a1c4$fitted.values)#
+a1Out#
+(xtable(a1Out, digits=3))
+Table A2: Column 1 - non incumbents,issueowner, logged#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) + isssal2#
+a2c1<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A2: Column 2 - difficult district, issueowner, logged#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table A2: Column 3 - non incumbents, issueowner, binary#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A2: Column 4 - difficult district, issueowner, binary#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c4<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+a2Out<-matrix(NA, nrow=17*2+5, ncol=4)#
+rownames(a2Out)<-c(1:(17*2+5))#
+rownames(a2Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2))]<-  rownames(a2c1$Coef)#
+rownames(a2Out)[35]<-"rho"#
+rownames(a2Out)[36]<-"asymp.se"#
+rownames(a2Out)[37]<-"LR.stat"#
+rownames(a2Out)[38]<-"p-value"#
+rownames(a2Out)[39]<-"N"#
+rownames(a2Out)[9]<-"open"#
+a2Out[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2)) ,1]<-a2c1$coefficients#
+a2Out[c(seq(2, 4*2, by=2), seq(6*2, 17*2, by=2)) ,1]<-a2c1$rest.se#
+a2Out[35,1]<-  a2c1$rho#
+a2Out[36,1]<- a2c1$rho.se#
+a2Out[37,1]<-a2c1$LR1[[1]][[1]]#
+a2Out[38,1]<-a2c1$LR1[[3]][[1]]#
+a2Out[39,1]<-length(a2c1$fitted.values)#
+a2Out[c(seq(1, 7*2, by=2), seq(10*2-1, 17*2, by=2)) ,2]<-(a2c2$coefficients)#
+a2Out[c(seq(2, 7*2, by=2), seq(10*2, 17*2, by=2)) ,2]<-a2c2$rest.se#
+a2Out[35,2]<-  a2c2$rho#
+a2Out[36,2]<- a2c2$rho.se#
+a2Out[37,2]<-a2c2$LR1[[1]][[1]]#
+a2Out[38,2]<-a2c2$LR1[[3]][[1]]#
+a2Out[39,2]<-length(a2c2$fitted.values)#
+a2Out[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2)) ,3]<-a2c3$coefficients#
+a2Out[c(seq(2, 4*2, by=2), seq(6*2, 17*2, by=2)) ,3]<-a2c3$rest.se#
+a2Out[35,3]<-  a2c3$rho#
+a2Out[36,3]<- a2c3$rho.se#
+a2Out[37,3]<-a2c3$LR1[[1]][[1]]#
+a2Out[38,3]<-a2c3$LR1[[3]][[1]]#
+a2Out[39,3]<-length(a2c3$fitted.values)#
+a2Out[c(seq(1, 7*2, by=2), seq(10*2-1, 17*2, by=2)) ,4]<-(a2c4$coefficients)#
+a2Out[c(seq(2, 7*2, by=2), seq(10*2, 17*2, by=2)) ,4]<-a2c4$rest.se#
+a2Out[35,4]<-  a2c4$rho#
+a2Out[36,4]<- a2c4$rho.se#
+a2Out[37,4]<-a2c4$LR1[[1]][[1]]#
+a2Out[38,4]<-a2c4$LR1[[3]][[1]]#
+a2Out[39,4]<-length(a2c4$fitted.values)#
+a2Out#
+(xtable(a2Out, digits=3))
+Appendix alternative measures: # positions, goneg, weaker evidence, but OK.#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt) #
+a3c4<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt) #
+a3c5<-my.spat3(form=this.mod, adj.matrix=adjMatLog,  selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdistAlt)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c6<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdist)))#
+a3Out<-matrix(NA, nrow=16*2+5, ncol=6)#
+a3Out[seq(1, 16*2, by=2) ,1]<-(a3c1$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,1]<-a3c1$rest.se#
+a3Out[33,1]<-  a3c1$rho#
+a3Out[34,1]<- a3c1$rho.se#
+a3Out[35,1]<-a3c1$LR1[[1]][[1]]#
+a3Out[36,1]<-a3c1$LR1[[3]][[1]]#
+a3Out[37,1]<-length(a3c1$fitted.values)#
+rownames(a3Out)<-1:37#
+rownames(a3Out)[seq(1, 16*2, by=2)]<-  rownames(a3c1$Coef)#
+rownames(a3Out)[33]<-"rho"#
+rownames(a3Out)[34]<-"asymp.se"#
+rownames(a3Out)[35]<-"LR.stat"#
+rownames(a3Out)[36]<-"p-value"#
+rownames(a3Out)[37]<-"N"#
+a3Out[seq(1, 16*2, by=2),2]<-(a3c2$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,2]<-a3c2$rest.se#
+a3Out[33,2]<-  a3c2$rho#
+a3Out[34,2]<- a3c2$rho.se#
+a3Out[35,2]<-a3c2$LR1[[1]][[1]]#
+a3Out[36,2]<-a3c2$LR1[[3]][[1]]#
+a3Out[37,2]<-length(a3c2$fitted.values)#
+a3Out[seq(1, 16*2, by=2),3]<-(a3c3$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,3]<-a3c3$rest.se#
+a3Out[33,3]<-  a3c3$rho#
+a3Out[34,3]<- a3c3$rho.se#
+a3Out[35,3]<-a3c3$LR1[[1]][[1]]#
+a3Out[36,3]<-a3c3$LR1[[3]][[1]]#
+a3Out[37,3]<-length(a3c3$fitted.values)#
+a3Out[seq(1, 16*2, by=2),4]<-(a3c4$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,4]<-a3c4$rest.se#
+a3Out[33,4]<-  a3c4$rho#
+a3Out[34,4]<- a3c4$rho.se#
+a3Out[35,4]<-a3c4$LR1[[1]][[1]]#
+a3Out[36,4]<-a3c4$LR1[[3]][[1]]#
+a3Out[37,4]<-length(a3c4$fitted.values)#
+a3Out[seq(1, 16*2, by=2),5]<-(a3c5$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,5]<-a3c5$rest.se#
+a3Out[33,5]<-  a3c5$rho#
+a3Out[34,5]<- a3c5$rho.se#
+a3Out[35,5]<-a3c5$LR1[[1]][[1]]#
+a3Out[36,5]<-a3c5$LR1[[3]][[1]]#
+a3Out[37,5]<-length(a3c5$fitted.values)#
+#
+a3Out[seq(1, 16*2, by=2),6]<-(a3c6$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,6]<-a3c6$rest.se#
+a3Out[33,6]<-  a3c6$rho#
+a3Out[34,6]<- a3c6$rho.se#
+a3Out[35,6]<-a3c6$LR1[[1]][[1]]#
+a3Out[36,6]<-a3c6$LR1[[3]][[1]]#
+a3Out[37,6]<-length(a3c6$fitted.values)#
+a3Out#
+xtable(a3Out, digits=3)
+load("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/falsification.RData")
+pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)
+pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+Created JMM 11/29/12#
+#
+#setwd("~/Dropbox/Consultant data analysis (1)/Clean data folder/data/")#
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/")#
+#
+library(spdep)#
+library(foreign)#
+library(spatialprobit)#
+library(plyr)#
+library("multicore")#
+library("foreach")#
+library("doMC")#
+#
+options(digits=10)#
+registerDoMC(cores=10)
+pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+pdf("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/TexFiles/Faslification.pdf")#
+#pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+pdf("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/correct-falsification.pdf")#
+#pdf("../../../TexFiles/Faslification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/partyyearpresSHARED/")
+pdf("../../../TexFiles/correct-falsification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+Created BJN 7/10/12#
+#JMM TO REVISE#
+# Jmm Revision on 9-11#
+#BJN fixed#
+# Jmmm Complete revision for new results 11/28#
+#
+#setwd("/Users/bnyhan/Downloads")#
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/")#
+#setwd("~/Dropbox/Consultant data analysis (1)/Clean data folder/data/")#
+library(spdep)#
+library(foreign)#
+library(spatialprobit)#
+library(xtable)#
+options(digits=10)#
+#
+## Different adjacency matrices #
+adjMatLog <- read.dta("allCand-log-after-proj.dta") #logged dolllars#
+adjMatLog<-as.matrix(adjMatLog, rownames.force = FALSE)#
+adjMatBin <- (adjMatLog>0)*1 #binary#
+adjMatShared<- read.dta("allCand-shared-cons.dta") #Count of shared consultants#
+adjMatShared <- as.matrix(adjMatShared, rownames.force = FALSE)#
+#
+## Read in the data#
+DruckData <- read.dta("DruckmanFinal2.dta")#
+#
+## Make some additional needed variables#
+DruckData$democrat04 <- DruckData$y2004*DruckData$democrat#
+DruckData$democrat06 <- DruckData$y2006*DruckData$democrat#
+#
+attach(DruckData)#
+region<-NA#
+region[statename=="Maine" | statename=="Massachusetts" | statename=="New Hampshire" | statename=="Rhode Island" | statename=="Vermont"] <- 0#
+region[statename=="Connecticut" | statename=="Delaware" | statename=="New Jersey" | statename == "New York" | statename=="Pennsylvania"] <- 1#
+region[statename=="Illinois" | statename=="Indiana" | statename=="Michigan" | statename=="Ohio" | statename=="Wisconsin"] <- 2#
+region[statename=="Iowa" | statename == "Kansas" | statename=="Minnesota" | statename=="Nebraska" | statename=="South Dakota" | statename=="North Dakota"] <- 3#
+region[statename=="Alabama" | statename == "Arkansas" | statename == "Florida"| statename == "Georgia" | statename=="Louisiana" | statename=="Mississippi" | statename=="North Carolina" | statename=="South Carolina" | statename=="Texas" | statename=="Virginia"] <- 4#
+region[statename=="Kentucky" | statename=="Maryland" | statename == "Missouri" | statename=="Oklahoma" | statename=="Tennessee" | statename=="West Virginia"] <- 5#
+region[statename=="Arizona" | statename=="Colorado" | statename=="Idaho" | statename == "Montana" | statename=="Nevada" | statename=="New Mexico" | statename=="Utah" | statename=="Wyoming"] <- 6#
+region[statename=="California" | statename=="Oregon" | statename=="Washington"] <- 7#
+region[statename=="Alaska"| statename == "Hawaii"] <- 7#
+detach(DruckData)#
+DruckData$region <- region#
+#
+DruckData$newdist <- DruckData$disrepvote#
+DruckData$newdist[DruckData$democrat==1] <- 100-DruckData$newdist[DruckData$democrat==1]#
+#
+#Make a version of newdist that is categorical#
+newdistAlt <- rep(0, nrow(DruckData))#
+newdistAlt[DruckData$newdist<=51&DruckData$newdist>42] <- 1#
+newdistAlt[DruckData$newdist<=59&DruckData$newdist>51] <- 2#
+newdistAlt[DruckData$newdist>59] <- 3#
+DruckData$newdistAlt <- newdistAlt#
+#
+# Incumebnt#
+DruckData$incumbent <- 1#
+DruckData$incumbent[DruckData$chall==1 | DruckData$open==1]<-0#
+#
+varselection <- c("y2004", "y2006", "democrat", "democrat04",#
+                  "democrat06", "chall", "open", "female",#
+                  "disrepvote", "senate", "isssal2", "demdisrepvote",#
+                  "oppgoneg", "fraised2", "goneg", "negperson",#
+                  "negiss", "risk", "issueowner", "bioreason",#
+                  "biooccup", "biofamil2", "poll", "cooks", "bioorg", "biotown",#
+                  "positions", "endorse", "partybann","cfscore",#
+                  "region", "incumbent", "newdist", "newdistAlt")#
+#
+DruckData.Reduced <- DruckData[,varselection]#
+my.spat3<-function(form, adj.matrix , data = DruckData.Reduced, selector){#
+  form=this.mod#
+  startlist<-adj.matrix#
+  dataset<-data#
+  startlist0<-startlist[selector, selector]#
+  final.list<-mat2listw(startlist0, style="W")#
+#  final.list <- nb2listw(final.list, glist=NULL, style="W", zero.policy=TRUE)#
+  final.data<-dataset[selector,]#
+  (summary(#
+           lagsarlm(form, data=final.data, listw=final.list, zero.policy=TRUE)#
+           )#
+   )#
+}#
+#
+#JACOB MESSING AROUND HERE#
+#str((mat2listw(adjMatShared)))#
+#
+#final.data<-dataset[selector,]#
+#
+#mat2listw(adjMatShared, style="W")$weights[[543]]#
+#mat2listw(adjMatBin, style="W")$weights[[543]]#
+#mat2listw(adjMatLog, style="W")$weights[[543]]#
+#nb2listw(mat2listw(adjMatLog)$neighbour, glis=NULL, style="W", zero.policy=TRUE)$weights[[543]]#
+#nb2listw(mat2listw(adjMatBin)$neighbour, glis=NULL, style="W", zero.policy=TRUE)$weights[[543]]#
+#
+                                        # Main results#
+#
+### Table 1: Column 1 #
+this.mod <- risk ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region) #
+t1c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)))#
+t1c1#
+#
+### Table 1: Column 2 #
+this.mod <- risk ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region) + cfscore#
+t1c2<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist) & !is.na(DruckData.Reduced$cfscore)))#
+t1c2#
+#
+### Table 1: Column3#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open + chall +   factor(newdistAlt) + factor(region) + isssal2#
+t1c3<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$issueowner) & !is.na(DruckData.Reduced$newdist)))#
+t1c3#
+#
+### Table 1: Column4#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open + chall +   factor(newdistAlt) + factor(region) + cfscore + isssal2 + cfscore#
+t1c4<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$issueowner) & !is.na(DruckData.Reduced$newdist) & !is.na(DruckData.Reduced$cfscore)))#
+t1c4#
+t1Out<-matrix(NA, nrow=18*2+5, ncol=4)#
+#
+t1Out[seq(1, 16*2, by=2) ,1]<-(t1c1$coefficients)#
+t1Out[seq(2, 16*2, by=2) ,1]<-t1c1$rest.se#
+t1Out[37,1]<-  t1c1$rho#
+t1Out[38,1]<- t1c1$rho.se#
+t1Out[39,1]<-t1c1$LR1[[1]][[1]]#
+t1Out[40,1]<-t1c1$LR1[[3]][[1]]#
+t1Out[41,1]<-length(t1c1$fitted.values)#
+t1Out[seq(1, 17*2, by=2) ,2]<-(t1c2$coefficients)#
+t1Out[seq(2, 17*2, by=2) ,2]<-t1c2$rest.se#
+t1Out[37,2]<-  t1c2$rho#
+t1Out[38,2]<- t1c2$rho.se#
+t1Out[39,2]<-t1c2$LR1[[1]][[1]]#
+t1Out[40,2]<-t1c2$LR1[[3]][[1]]#
+t1Out[41,2]<-length(t1c2$fitted.values)#
+rownames(t1Out)<-1:41#
+rownames(t1Out)[seq(1, 18*2, by=2)]<-  rownames(t1c4$Coef)#
+rownames(t1Out)[37]<-"rho"#
+rownames(t1Out)[38]<-"asymp.se"#
+rownames(t1Out)[39]<-"LR.stat"#
+rownames(t1Out)[40]<-"p-value"#
+rownames(t1Out)[41]<-"N"#
+t1Out[c(seq(1, 16*2, by=2), 35)  ,3]<-(t1c3$coefficients)#
+t1Out[c(seq(2, 16*2, by=2),36) ,3]<-t1c3$rest.se#
+t1Out[37,3]<-  t1c3$rho#
+t1Out[38,3]<- t1c3$rho.se#
+t1Out[39,3]<-t1c3$LR1[[1]][[1]]#
+t1Out[40,3]<-t1c3$LR1[[3]][[1]]#
+t1Out[41,3]<-length(t1c3$fitted.values)#
+t1Out[seq(1, 18*2, by=2) ,4]<-(t1c4$coefficients)#
+t1Out[seq(2, 18*2, by=2) ,4]<-t1c4$rest.se#
+t1Out[37,4]<-  t1c4$rho#
+t1Out[38,4]<- t1c4$rho.se#
+t1Out[39,4]<-t1c4$LR1[[1]][[1]]#
+t1Out[40,4]<-t1c4$LR1[[3]][[1]]#
+t1Out[41,4]<-length(t1c4$fitted.values)#
+t1Out#
+(xtable(t1Out, digits=3))#
+#
+                                        # Subsetting data for risk#
+#
+### Table 2: Column 1 - non incumbents#
+this.mod <- risk ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region)#
+#this.mod <- risk ~ y2004 + y2006 + democrat#
+t2c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist))  & DruckData.Reduced$incumbent == 0)#
+#
+### Table 2: Column 2 - incumbents#
+this.mod <- risk ~ y2004 + y2006 + democrat +  factor(newdistAlt)+ factor(region) #
+t2c2<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 1)#
+### Table 2: Column 3 - difficult district#
+this.mod <- risk ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) #
+t2c3<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table 2: Column 4 - easy district#
+this.mod <- risk ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region) #
+t2c4<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt>=2)#
+t2Out<-matrix(NA, nrow=16*2+5, ncol=4)#
+rownames(t2Out)<-c(1:(16*2+5))#
+rownames(t2Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2))]<-  rownames(t2c1$Coef)#
+rownames(t2Out)[33]<-"rho"#
+rownames(t2Out)[34]<-"asymp.se"#
+rownames(t2Out)[35]<-"LR.stat"#
+rownames(t2Out)[36]<-"p-value"#
+rownames(t2Out)[37]<-"N"#
+rownames(t2Out)[9]<-"open"#
+t2Out[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2)) ,1]<-t2c1$coefficients#
+t2Out[c(seq(2, 4*2, by=2), seq(6*2, 16*2, by=2)) ,1]<-t2c1$rest.se#
+t2Out[33,1]<-  t2c1$rho#
+t2Out[34,1]<- t2c1$rho.se#
+t2Out[35,1]<-t2c1$LR1[[1]][[1]]#
+t2Out[36,1]<-t2c1$LR1[[3]][[1]]#
+t2Out[37,1]<-length(t2c1$fitted.values)#
+t2Out[c(seq(1, 4*2, by=2), seq(7*2-1, 16*2, by=2)) ,2]<-t2c2$coefficients#
+t2Out[c(seq(2, 4*2, by=2), seq(7*2, 16*2, by=2)) ,2]<-t2c2$rest.se#
+t2Out[33,2]<-  t2c2$rho#
+t2Out[34,2]<- t2c2$rho.se#
+t2Out[35,2]<-t2c2$LR1[[1]][[1]]#
+t2Out[36,2]<-t2c2$LR1[[3]][[1]]#
+t2Out[37,2]<-length(t2c2$fitted.values)#
+t2Out[c(seq(1, 7*2, by=2), seq(10*2-1, 16*2, by=2)) ,3]<-(t2c3$coefficients)#
+t2Out[c(seq(2, 7*2, by=2), seq(10*2, 16*2, by=2)) ,3]<-t2c3$rest.se#
+t2Out[33,3]<-  t2c3$rho#
+t2Out[34,3]<- t2c3$rho.se#
+t2Out[35,3]<-t2c3$LR1[[1]][[1]]#
+t2Out[36,3]<-t2c3$LR1[[3]][[1]]#
+t2Out[37,3]<-length(t2c3$fitted.values)#
+t2Out[c(seq(1, 6*2, by=2), seq(9*2-1, 16*2, by=2)) ,4]<-  (t2c4$coefficients)#
+t2Out[c(seq(2, 6*2, by=2), seq(9*2, 16*2, by=2)) ,4]<-t2c4$rest.se#
+t2Out[33,4]<-  t2c4$rho#
+t2Out[34,4]<- t2c4$rho.se#
+t2Out[35,4]<-t2c4$LR1[[1]][[1]]#
+t2Out[36,4]<-t2c4$LR1[[3]][[1]]#
+t2Out[37,4]<-length(t2c4$fitted.values)#
+t2Out#
+(xtable(t2Out, digits=3))#
+                                        # Subsetting for issueowner -- everything is significant#
+#
+### Table 3: Column 1 - non incumbents#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region)  + isssal2#
+t3c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table 3: Column 2 - incumbents#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  factor(newdistAlt)+ factor(region)  + isssal2#
+t3c2<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 1)#
+#
+### Table 3: Column 3 - difficult district#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region)  + isssal2#
+t3c3<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table 3: Column 4 - easy district#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  open + chall + factor(newdistAlt)+ factor(region)  + isssal2#
+t3c4 <- my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt>=2)#
+t3Out<-matrix(NA, nrow=17*2+5, ncol=4)#
+rownames(t3Out)<-c(1:(17*2+5))#
+rownames(t3Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2))]<-  rownames(t3c1$Coef)#
+rownames(t3Out)[35]<-"rho"#
+rownames(t3Out)[36]<-"asymp.se"#
+rownames(t3Out)[37]<-"LR.stat"#
+rownames(t3Out)[38]<-"p-value"#
+rownames(t3Out)[39]<-"N"#
+rownames(t3Out)[9]<-"open"#
+t3Out[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2)) ,1]<-t3c1$coefficients#
+t3Out[c(seq(2, 4*2, by=2), seq(6*2, 17*2, by=2)) ,1]<-t3c1$rest.se#
+t3Out[35,1]<-  t3c1$rho#
+t3Out[36,1]<- t3c1$rho.se#
+t3Out[37,1]<-t3c1$LR1[[1]][[1]]#
+t3Out[38,1]<-t3c1$LR1[[3]][[1]]#
+t3Out[39,1]<-length(t3c1$fitted.values)#
+t3Out[c(seq(1, 4*2, by=2), seq(7*2-1, 17*2, by=2)) ,2]<-t3c2$coefficients#
+t3Out[c(seq(2, 4*2, by=2), seq(7*2, 17*2, by=2)) ,2]<-t3c2$rest.se#
+t3Out[35,2]<-  t3c2$rho#
+t3Out[36,2]<- t3c2$rho.se#
+t3Out[37,2]<-t3c2$LR1[[1]][[1]]#
+t3Out[38,2]<-t3c2$LR1[[3]][[1]]#
+t3Out[39,2]<-length(t3c2$fitted.values)#
+t3Out[c(seq(1, 7*2, by=2), seq(10*2-1, 17*2, by=2)) ,3]<-(t3c3$coefficients)#
+t3Out[c(seq(2, 7*2, by=2), seq(10*2, 17*2, by=2)) ,3]<-t3c3$rest.se#
+t3Out[35,3]<-  t3c3$rho#
+t3Out[36,3]<- t3c3$rho.se#
+t3Out[37,3]<-t3c3$LR1[[1]][[1]]#
+t3Out[38,3]<-t3c3$LR1[[3]][[1]]#
+t3Out[39,3]<-length(t3c3$fitted.values)#
+t3Out[c(seq(1, 6*2, by=2), seq(9*2-1, 17*2, by=2)) ,4]<-  (t3c4$coefficients)#
+t3Out[c(seq(2, 6*2, by=2), seq(9*2, 17*2, by=2)) ,4]<-t3c4$rest.se#
+t3Out[35,4]<-  t3c4$rho#
+t3Out[36,4]<- t3c4$rho.se#
+t3Out[37,4]<-t3c4$LR1[[1]][[1]]#
+t3Out[38,4]<-t3c4$LR1[[3]][[1]]#
+t3Out[39,4]<-length(t3c4$fitted.values)#
+t3Out#
+(xtable(t3Out, digits=3))#
+                                        # Appendix on alternative matrices#
+### Table A1: Column 1 - non incumbents, risk, logged#
+this.mod <- risk ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) #
+a1c1<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A1: Column 2 - difficult district, risk, logged#
+this.mod <- risk ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) #
+a1c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table A1: Column 3 - non incumbents, risk, binary#
+this.mod <- risk ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) #
+a1c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A1: Column 4 - difficult district, risk, binary#
+this.mod <- risk ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) #
+a1c4<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+a1Out<-matrix(NA, nrow=16*2+5, ncol=4)#
+rownames(a1Out)<-c(1:(16*2+5))#
+rownames(a1Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2))]<-  rownames(a1c1$Coef)#
+rownames(a1Out)[33]<-"rho"#
+rownames(a1Out)[34]<-"asymp.se"#
+rownames(a1Out)[35]<-"LR.stat"#
+rownames(a1Out)[36]<-"p-value"#
+rownames(a1Out)[37]<-"N"#
+rownames(a1Out)[9]<-"open"#
+a1Out[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2)) ,1]<-a1c1$coefficients#
+a1Out[c(seq(2, 4*2, by=2), seq(6*2, 16*2, by=2)) ,1]<-a1c1$rest.se#
+a1Out[33,1]<-  a1c1$rho#
+a1Out[34,1]<- a1c1$rho.se#
+a1Out[35,1]<-a1c1$LR1[[1]][[1]]#
+a1Out[36,1]<-a1c1$LR1[[3]][[1]]#
+a1Out[37,1]<-length(a1c1$fitted.values)#
+a1Out[c(seq(1, 7*2, by=2), seq(10*2-1, 16*2, by=2)) ,2]<-(a1c2$coefficients)#
+a1Out[c(seq(2, 7*2, by=2), seq(10*2, 16*2, by=2)) ,2]<-a1c2$rest.se#
+a1Out[33,2]<-  a1c2$rho#
+a1Out[34,2]<- a1c2$rho.se#
+a1Out[35,2]<-a1c2$LR1[[1]][[1]]#
+a1Out[36,2]<-a1c2$LR1[[3]][[1]]#
+a1Out[37,2]<-length(a1c2$fitted.values)#
+a1Out[c(seq(1, 4*2, by=2), seq(6*2-1, 16*2, by=2)) ,3]<-a1c3$coefficients#
+a1Out[c(seq(2, 4*2, by=2), seq(6*2, 16*2, by=2)) ,3]<-a1c3$rest.se#
+a1Out[33,3]<-  a1c3$rho#
+a1Out[34,3]<- a1c3$rho.se#
+a1Out[35,3]<-a1c3$LR1[[1]][[1]]#
+a1Out[36,3]<-a1c3$LR1[[3]][[1]]#
+a1Out[37,3]<-length(a1c3$fitted.values)#
+a1Out[c(seq(1, 7*2, by=2), seq(10*2-1, 16*2, by=2)) ,4]<-(a1c4$coefficients)#
+a1Out[c(seq(2, 7*2, by=2), seq(10*2, 16*2, by=2)) ,4]<-a1c4$rest.se#
+a1Out[33,4]<-  a1c4$rho#
+a1Out[34,4]<- a1c4$rho.se#
+a1Out[35,4]<-a1c4$LR1[[1]][[1]]#
+a1Out[36,4]<-a1c4$LR1[[3]][[1]]#
+a1Out[37,4]<-length(a1c4$fitted.values)#
+a1Out#
+(xtable(a1Out, digits=3))#
+### Table A2: Column 1 - non incumbents,issueowner, logged#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) + isssal2#
+a2c1<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A2: Column 2 - difficult district, issueowner, logged#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+#
+### Table A2: Column 3 - non incumbents, issueowner, binary#
+this.mod <- issueowner ~ y2004 + y2006 + democrat +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$incumbent == 0)#
+#
+### Table A2: Column 4 - difficult district, issueowner, binary#
+this.mod <- issueowner ~ y2004 + y2006 + democrat + open +  chall + factor(newdistAlt)+ factor(region) +isssal2#
+a2c4<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$risk) & !is.na(DruckData.Reduced$newdist)) & DruckData.Reduced$newdistAlt<=1)#
+a2Out<-matrix(NA, nrow=17*2+5, ncol=4)#
+rownames(a2Out)<-c(1:(17*2+5))#
+rownames(a2Out)[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2))]<-  rownames(a2c1$Coef)#
+rownames(a2Out)[35]<-"rho"#
+rownames(a2Out)[36]<-"asymp.se"#
+rownames(a2Out)[37]<-"LR.stat"#
+rownames(a2Out)[38]<-"p-value"#
+rownames(a2Out)[39]<-"N"#
+rownames(a2Out)[9]<-"open"#
+a2Out[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2)) ,1]<-a2c1$coefficients#
+a2Out[c(seq(2, 4*2, by=2), seq(6*2, 17*2, by=2)) ,1]<-a2c1$rest.se#
+a2Out[35,1]<-  a2c1$rho#
+a2Out[36,1]<- a2c1$rho.se#
+a2Out[37,1]<-a2c1$LR1[[1]][[1]]#
+a2Out[38,1]<-a2c1$LR1[[3]][[1]]#
+a2Out[39,1]<-length(a2c1$fitted.values)#
+a2Out[c(seq(1, 7*2, by=2), seq(10*2-1, 17*2, by=2)) ,2]<-(a2c2$coefficients)#
+a2Out[c(seq(2, 7*2, by=2), seq(10*2, 17*2, by=2)) ,2]<-a2c2$rest.se#
+a2Out[35,2]<-  a2c2$rho#
+a2Out[36,2]<- a2c2$rho.se#
+a2Out[37,2]<-a2c2$LR1[[1]][[1]]#
+a2Out[38,2]<-a2c2$LR1[[3]][[1]]#
+a2Out[39,2]<-length(a2c2$fitted.values)#
+a2Out[c(seq(1, 4*2, by=2), seq(6*2-1, 17*2, by=2)) ,3]<-a2c3$coefficients#
+a2Out[c(seq(2, 4*2, by=2), seq(6*2, 17*2, by=2)) ,3]<-a2c3$rest.se#
+a2Out[35,3]<-  a2c3$rho#
+a2Out[36,3]<- a2c3$rho.se#
+a2Out[37,3]<-a2c3$LR1[[1]][[1]]#
+a2Out[38,3]<-a2c3$LR1[[3]][[1]]#
+a2Out[39,3]<-length(a2c3$fitted.values)#
+a2Out[c(seq(1, 7*2, by=2), seq(10*2-1, 17*2, by=2)) ,4]<-(a2c4$coefficients)#
+a2Out[c(seq(2, 7*2, by=2), seq(10*2, 17*2, by=2)) ,4]<-a2c4$rest.se#
+a2Out[35,4]<-  a2c4$rho#
+a2Out[36,4]<- a2c4$rho.se#
+a2Out[37,4]<-a2c4$LR1[[1]][[1]]#
+a2Out[38,4]<-a2c4$LR1[[3]][[1]]#
+a2Out[39,4]<-length(a2c4$fitted.values)#
+a2Out#
+(xtable(a2Out, digits=3))#
+                                        # Appendix alternative measures: # positions, goneg, weaker evidence, but OK.#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c1<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c2<-my.spat3(form=this.mod, adj.matrix=adjMatLog, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- positions ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c3<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$positions) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt) #
+a3c4<-my.spat3(form=this.mod, adj.matrix=adjMatShared, selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdist)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt) #
+a3c5<-my.spat3(form=this.mod, adj.matrix=adjMatLog,  selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdistAlt)))#
+#
+this.mod <- goneg ~ y2004 + y2006 + democrat +  open + chall +  factor(region) + factor(newdistAlt)#
+a3c6<-my.spat3(form=this.mod, adj.matrix=adjMatBin, selector=c(!is.na(DruckData.Reduced$goneg) & !is.na(DruckData.Reduced$newdist)))#
+a3Out<-matrix(NA, nrow=16*2+5, ncol=6)#
+a3Out[seq(1, 16*2, by=2) ,1]<-(a3c1$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,1]<-a3c1$rest.se#
+a3Out[33,1]<-  a3c1$rho#
+a3Out[34,1]<- a3c1$rho.se#
+a3Out[35,1]<-a3c1$LR1[[1]][[1]]#
+a3Out[36,1]<-a3c1$LR1[[3]][[1]]#
+a3Out[37,1]<-length(a3c1$fitted.values)#
+rownames(a3Out)<-1:37#
+rownames(a3Out)[seq(1, 16*2, by=2)]<-  rownames(a3c1$Coef)#
+rownames(a3Out)[33]<-"rho"#
+rownames(a3Out)[34]<-"asymp.se"#
+rownames(a3Out)[35]<-"LR.stat"#
+rownames(a3Out)[36]<-"p-value"#
+rownames(a3Out)[37]<-"N"#
+a3Out[seq(1, 16*2, by=2),2]<-(a3c2$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,2]<-a3c2$rest.se#
+a3Out[33,2]<-  a3c2$rho#
+a3Out[34,2]<- a3c2$rho.se#
+a3Out[35,2]<-a3c2$LR1[[1]][[1]]#
+a3Out[36,2]<-a3c2$LR1[[3]][[1]]#
+a3Out[37,2]<-length(a3c2$fitted.values)#
+a3Out[seq(1, 16*2, by=2),3]<-(a3c3$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,3]<-a3c3$rest.se#
+a3Out[33,3]<-  a3c3$rho#
+a3Out[34,3]<- a3c3$rho.se#
+a3Out[35,3]<-a3c3$LR1[[1]][[1]]#
+a3Out[36,3]<-a3c3$LR1[[3]][[1]]#
+a3Out[37,3]<-length(a3c3$fitted.values)#
+a3Out[seq(1, 16*2, by=2),4]<-(a3c4$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,4]<-a3c4$rest.se#
+a3Out[33,4]<-  a3c4$rho#
+a3Out[34,4]<- a3c4$rho.se#
+a3Out[35,4]<-a3c4$LR1[[1]][[1]]#
+a3Out[36,4]<-a3c4$LR1[[3]][[1]]#
+a3Out[37,4]<-length(a3c4$fitted.values)#
+a3Out[seq(1, 16*2, by=2),5]<-(a3c5$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,5]<-a3c5$rest.se#
+a3Out[33,5]<-  a3c5$rho#
+a3Out[34,5]<- a3c5$rho.se#
+a3Out[35,5]<-a3c5$LR1[[1]][[1]]#
+a3Out[36,5]<-a3c5$LR1[[3]][[1]]#
+a3Out[37,5]<-length(a3c5$fitted.values)#
+#
+a3Out[seq(1, 16*2, by=2),6]<-(a3c6$coefficients)#
+a3Out[seq(2, 16*2, by=2) ,6]<-a3c6$rest.se#
+a3Out[33,6]<-  a3c6$rho#
+a3Out[34,6]<- a3c6$rho.se#
+a3Out[35,6]<-a3c6$LR1[[1]][[1]]#
+a3Out[36,6]<-a3c6$LR1[[3]][[1]]#
+a3Out[37,6]<-length(a3c6$fitted.values)#
+a3Out#
+xtable(a3Out, digits=3)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(52.5, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(51.15593, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(51.117, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(57, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)
+load("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/falsification.RData")
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(57, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(62, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(64, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(64, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(66, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)
+pdf("../../../TexFiles/correct-falsification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(66, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+setwd("/Users/bnyhan/Documents/Dropbox/Consultant data analysis/Clean data folder/data/partyyearpresSHARED/")
+pdf("../../../TexFiles/correct-falsification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(66, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+getwd()
+pdf("../../../TexFiles/correct-falsification.pdf")#
+par(mfrow=c(3,2), cex.axis=.65, mar=c(2,2,3,0))#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYR, from=min(mcRiskPYR), to=max(mcRiskPYR)), xlab="", main="Risk: Permutations by candidate type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYR, from=min(mcIssPYR), to=max(mcIssPYR)), xlab="", ylab="", main="Issues: Permutations by candidate type")#
+abline(v= 49.066, lty=2)#
+text(66, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYR)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYR, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskPYP, from=min(mcRiskPYP), to=max(mcRiskPYP)), xlab="",  main="Risk: Permutations by district type")#
+abline(v= 5.111, lty=2)#
+rug(mcRiskPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssPYP, from=min(mcIssPYP), to=max(mcIssPYP)), xlab="",ylab="", main="Issues: Permutations by district type")#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssPYP)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssPYP, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(5.159, .3, "Observed value", cex=1, pos=4)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcRiskSPY, from=min(mcRiskSPY), to=max(mcRiskSPY)), xlab="Likelihood ratio statistic (Monte Carlo)", main="Risk: Permutations by region")#
+abline(v= 5.111, lty=2)#
+text(5.1159, .3, "Observed value", cex=1, pos=4)#
+rug(mcRiskSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcRiskSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+#text(8, .3, "Observed value", cex=.8)#
+#segments(7, .27, 5.159, .2)#
+par(tcl=0, mgp=c(1,0,0))#
+plot(density(mcIssSPY, from=min(mcIssSPY), to=max(mcIssSPY)), ylab="",xlab="Likelihood ratio statistic (Monte Carlo)", main="Issues: Permutations by region", ylim=c(0,.051))#
+abline(v= 49.066, lty=2)#
+text(49, .035, "Observed value", cex=1, pos=2)#
+rug(mcIssSPY)#
+par(tcl=.5)#
+axis(3, at=quantile(mcIssSPY, c(.5, .9,  .95, .99)),  padj=0, labels=c("50%","90%", "95%", "99%"), cex=.6)#
+text(8, .3, "Observed value", cex=.8)#
+segments(7, .27, 5.159, .2)#
+dev.off()
+sum(mcRiskPYR>5.111)#
+sum(mcRiskSPY>5.111)#
+sum(mcRiskPYP>5.111)#
+#
+sum(mcIssPYR>49.066)#
+sum(mcIssSPY>49.066)#
+sum(mcIssPYP>49.066)
+sum(mcRiskPYR>5.111)/sum(is.na(mcRiskPYR))
+sum(mcRiskPYR>5.111)/sum(!is.na(mcRiskPYR))
+percentage greater than observed values#
+1-(100*(sum(mcRiskPYR>5.111)/sum(!is.na(mcRiskPYR))))#
+1-(100*(sum(mcRiskSPY>5.111)/sum(!is.na(mcRiskSPY))))#
+1-(100*(sum(mcRiskPYP>5.111)/sum(!is.na(mcRiskPYP))))#
+#
+1-(100*(sum(mcIssPYR>49.066)/sum(!is.na(mcIssPYR))))#
+1-(100*(sum(mcIssSPY>49.066)/sum(!is.na(mcIssSPY))))#
+1-(100*(sum(mcIssPYP>49.066)/sum(!is.na(mcIssPYP))))
+percentage greater than observed values#
+100-(100*(sum(mcRiskPYR>5.111)/sum(!is.na(mcRiskPYR))))#
+100-(100*(sum(mcRiskSPY>5.111)/sum(!is.na(mcRiskSPY))))#
+100-(100*(sum(mcRiskPYP>5.111)/sum(!is.na(mcRiskPYP))))#
+#
+100-(100*(sum(mcIssPYR>49.066)/sum(!is.na(mcIssPYR))))#
+100-(100*(sum(mcIssSPY>49.066)/sum(!is.na(mcIssSPY))))#
+100-(100*(sum(mcIssPYP>49.066)/sum(!is.na(mcIssPYP))))
