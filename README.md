@@ -21,7 +21,7 @@ LabProject_diffusion/
 │       ├── CLEAN_main.pdf
 │       ├── CLEAN_tutorial_sbm.pdf
 │       ├── .claude/commands/clean-replicate.md
-│       └── data/                                        # Please replace this with new replication data             
+│       └── data/                         # Please replace this with new replication data             
 └── .claude/commands/                         # Claude Code slash commands
     ├── clean-replicate.md
     └── paper-candidates.md
@@ -29,13 +29,22 @@ LabProject_diffusion/
 
 ## Replications
 
-| Paper | Status |
-|-------|--------|
-| Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | In progress |
-| Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed |
-| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | In progress |
-| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | QMD done |
-| Olar (2019) JPR — Diffusion of Repression | Tutorial stage |
+| Paper | Status | Replicated By | CLEAN Works? | Reason |
+|-------|--------|---------------|--------------|--------|
+| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 |
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) |
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | Yes | TBD |
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
+| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
+| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
+| Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
+| Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
+| How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
+| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
+| Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
+| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | | |
+| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | In progress | Zihuan | | |
+| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | In progress | Deki | TBD | Could not reproduce original results; re-replicating with Claude Code |
 
 ## Claude Code slash commands
 
