@@ -27,24 +27,54 @@ LabProject_diffusion/
     └── paper-candidates.md
 ```
 
-## Replications
+## Already Replicated
 
 | Paper | Status | Replicated By | CLEAN Works? | Reason |
 |-------|--------|---------------|--------------|--------|
+| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes | |
 | Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 |
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) |
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | Yes | TBD |
-| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
-| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
-| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
+| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | Completed | Zihuan | NO | R² = 0.102: block membership explains only 10% of Wy, and geographical contiguity is a strong direct connection not just a proxy of similarity |
+| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
 | Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
 | Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
 | How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
+| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
+| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
-| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | | |
-| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | In progress | Zihuan | | |
-| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | In progress | Deki | TBD | Could not reproduce original results; re-replicating with Claude Code |
+
+### Ready to be Replicated (checked by Jack)
+| Paper | Status |
+| --- | --- |
+| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Checked by Jack |
+| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Checked by Jack |
+| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | Checked by Jack |
+| Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | Checked by Jack |
+| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | Checked by Jack |
+| Ruggeri et al. (2017) PSRM — Counterbalancing, Spatial Dependence, Peer Effects | Checked by Jack |
+| Lindstädt et al. (2017) PSRM — Diffusion in Congress | Checked by Jack |
+| Metternich et al. (2017) JCR — Firewall? Or Wall on Fire? | Checked by Jack |
+| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Checked by Jack |
+| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | Checked by Jack |
+| Gade et al. (2019) JPR — Fratricide in Rebel Movements | Checked by Jack |
+| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Checked by Jack |
+| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | TBD |
+| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | TBD |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | TBD |
+| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | TBD |
+| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | TBD |
+| Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | TBD |
+| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | TBD |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | TBD |
+| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | TBD |
+| Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | TBD |
+| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | TBD |
+| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | TBD |
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | TBD |
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | TBD |
 
 ## Claude Code slash commands
 
