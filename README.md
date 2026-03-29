@@ -46,33 +46,33 @@ LabProject_diffusion/
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 
-### Ready to be Replicated (checked by Jack)
+### Ready to be Replicated (checked by Zihuan)
 | Paper | Status |
 | --- | --- |
 | Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Checked by Jack |
 | Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Checked by Jack |
-| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | Checked by Jack |
-| Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | Checked by Jack |
-| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | Checked by Jack |
-| Ruggeri et al. (2017) PSRM — Counterbalancing, Spatial Dependence, Peer Effects | Checked by Jack |
-| Lindstädt et al. (2017) PSRM — Diffusion in Congress | Checked by Jack |
-| Metternich et al. (2017) JCR — Firewall? Or Wall on Fire? | Checked by Jack |
-| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Checked by Jack |
-| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | Checked by Jack |
-| Gade et al. (2019) JPR — Fratricide in Rebel Movements | Checked by Jack |
-| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Checked by Jack |
-| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | TBD |
-| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | TBD |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | TBD |
-| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | TBD |
-| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | TBD |
-| Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | TBD |
-| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | TBD |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | TBD |
-| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | TBD |
-| Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | TBD |
-| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | TBD |
-| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | TBD |
+| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
+| Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
+| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | No data |
+| Ruggeri et al. (2017) PSRM — Counterbalancing, Spatial Dependence, Peer Effects | No data |
+| Lindstädt et al. (2017) PSRM — Diffusion in Congress | No data |
+| Metternich et al. (2017) JCR — Firewall? Or Wall on Fire? | No data |
+| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | No data |
+| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | No data |
+| Gade et al. (2019) JPR — Fratricide in Rebel Movements | No time variation |
+| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | No data |
+| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
+| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Zihuan |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu |
+| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | No data |
+| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | No data |
+| Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | No data |
+| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | No data |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu |
+| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
+| Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
+| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
+| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | No data |
 | Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | TBD |
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | TBD |
 
