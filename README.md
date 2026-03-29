@@ -49,8 +49,8 @@ LabProject_diffusion/
 ### Ready to be Replicated (checked by Zihuan)
 | Paper | Status |
 | --- | --- |
-| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Checked by Jack |
-| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Checked by Jack |
+| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki |
+| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki |
 | Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
 | Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
 | Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | No data |
