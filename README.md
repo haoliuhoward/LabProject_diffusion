@@ -73,8 +73,21 @@ LabProject_diffusion/
 | Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
 | Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
 | Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | No data |
-| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | TBD |
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | TBD |
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | No data |
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | No data |
+| The Social Construction of Global Health Priorities: An Empirical Analysis of Contagion in Bilateral Health Aid (ISQ 2022) | Data Available |
+| Policy Diffusion: The Issue-Definition Stage (AJPS 2021) | Data Available |
+| Regulatory Convergence in the Financial Periphery: How Interdependence Shapes Regulators’ Decisions (ISQ 2019) | Data Available |
+| Policy Networks Across Political Systems (AJPS 2023) | Data Available |
+| Killing Two Birds with One Stone? Examining the Diffusion Effect of Militant Leadership Decapitation (ISQ 2018) | Data Available |
+| Diffusing Political Concerns: How Unemployment Information Passed between Social Ties Influences Danish Voters (JOP 2022) | TBD, no access to Chicago Press, need to check whether the data available |
+| Navigating the Range of Statistical Tools for Inferential Network Analysis (AJPS 2017) | Data Available |
+| The Globalization of Liberalization: Policy Diffusion in the International Political Economy (APSR 2004) | Data Available |
+| Modeling Diffusion through Statistical Network Analysis: A Simulation Study and Empirical Application to Same-Sex Marriage (ISQ 2022) | Data Available |
+| Are Coups Really Contagious? An Extreme Bounds Analysis of Political Diffusion (JCR 2016) | Data Available |
+| Competing for Scarce Foreign Capital: Spatial Dependence in the Diffusion of Double Taxation Treaties (ISQ 2012) | Data Available |
+| Networks as Channels of Policy Diffusion: Explaining Worldwide Changes in Capital Taxation, 1998–2006 (ISQ 2010) | Data Available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
+
 
 ## Claude Code slash commands
 
