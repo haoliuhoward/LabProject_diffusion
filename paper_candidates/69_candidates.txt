@@ -1,0 +1,280 @@
+KEYWORD-FILTERED CANDIDATES — 69 papers
+Filter: spatial/diffusion keywords in title + polisci journal + year >= 2000 + not excluded
+====================================================================================================
+
+ 1. [3s] 2012 | Choosing Your Neighbors: Networks of Diffusion in International Relations<sup>1</sup>
+      Authors: Yuri Zhukov; Brandon Stewart
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/isqu.12008
+
+ 2. [3s] 2011 | Peacekeeping and the Contagion of Armed Conflict
+      Authors: Kyle Beardsley
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1017/s0022381611000764
+
+ 3. [2s] 2020 | Strategic rebels: a spatial econometric approach to rebel fighting durations in civil wars
+      Authors: Nils W. Metternich; Julian Wucherpfennig
+      Venue: International Interactions | DOI: https://doi.org/10.1080/03050629.2020.1737800
+
+ 4. [2s] 2016 | The Intrastate Contagion of Ethnic Civil War
+      Authors: Matthew Lane
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1086/684630
+
+ 5. [2s] 2016 | The importance of conflict characteristics for the diffusion of international mediation
+      Authors: Tobias Böhmelt
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343316628827
+
+ 6. [2s] 2015 | The Diffusion of International Border Agreements
+      Authors: Khelani Clay; Andrew P. Owsiak
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1086/683987
+
+ 7. [2s] 2014 | Categories, Creditworthiness, and Contagion: How Investors' Shortcuts Affect Sovereign Deb
+      Authors: Sarah M. Brooks; Raphael Cunha; Layna Mosley
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/isqu.12173
+
+ 8. [2s] 2014 | The spatial contagion of international mediation
+      Authors: Tobias Böhmelt
+      Venue: Conflict Management and Peace Science | DOI: https://doi.org/10.1177/0738894214544615
+
+ 9. [2s] 2014 | Does Information Lead to Emulation? Spatial Dependence in Anti-Government Violence
+      Authors: Blake E. Garcia; Cameron Wimpy
+      Venue: Political Science Research and Methods | DOI: https://doi.org/10.1017/psrm.2014.18
+
+10. [2s] 2014 | Civil war, spillover and neighbors’ military spending
+      Authors: Brian J. Phillips
+      Venue: Conflict Management and Peace Science | DOI: https://doi.org/10.1177/0738894214530853
+
+11. [2s] 2014 | Diffusion of Compliance in the ‘Race towards Brussels?’ A Spatial Approach to EU Accession
+      Authors: Tobias Böhmelt; Tina Freyburg
+      Venue: West European Politics | DOI: https://doi.org/10.1080/01402382.2014.943523
+
+12. [2s] 2012 | Neighborhood Watch: Spatial Effects of Human Rights INGOs
+      Authors: Sam R. Bell; Khelani Clay; Amanda Murdie
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1017/s0022381611001642
+
+13. [2s] 2011 | The New Regionalism and Policy Interdependence
+      Authors: Leonardo Baccini; Andreas Dür
+      Venue: British Journal of Political Science | DOI: https://doi.org/10.1017/s0007123411000238
+
+14. [2s] 2009 | Model specification in the analysis of spatial dependence
+      Authors: Thomas Plümper; Eric Neumayer
+      Venue: European Journal of Political Research | DOI: https://doi.org/10.1111/j.1475-6765.2009.01900.x
+
+15. [1s] 2024 | Third-party countries in cyber conflict: Public opinion and conflict spillover in cyberspa
+      Authors: Miguel Alberto Gomez; Gregory Winger
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/00223433241235852
+
+16. [1s] 2024 | The Diffusion of Exclusion: Medieval Expulsions of Jews
+      Authors: Kerice Doten-Snitker
+      Venue: Comparative Political Studies | DOI: https://doi.org/10.1177/00104140241269956
+
+17. [1s] 2022 | Diffusion of protests in the Arab Spring
+      Authors: Christopher Magee; Tansa George Massoud
+      Venue: International Interactions | DOI: https://doi.org/10.1080/03050629.2022.2115039
+
+18. [1s] 2022 | Far-right domino: Towards an integrated framework of political contagion
+      Authors: Costas Roumanias; Lamprini Rori; Vasiliki Georgiadou
+      Venue: Electoral Studies | DOI: https://doi.org/10.1016/j.electstud.2022.102442
+
+19. [1s] 2022 | Spatial modeling of dyadic geopolitical interactions between moving actors
+      Authors: Sangyeon Kim; Howard Liu; Bruce Desmarais
+      Venue: Political Science Research and Methods | DOI: https://doi.org/10.1017/psrm.2022.6
+
+20. [1s] 2021 | The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 
+      Authors: Toke Aidt; Gabriel León; Max Satchell
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1086/714784
+
+21. [1s] 2021 | The geo-temporal evolution of violence in civil conflicts: A micro analysis of conflict di
+      Authors: Arzu Kıbrıs
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343320978695
+
+22. [1s] 2020 | Illiberal Norm Diffusion: How Do Governments Learn to Restrict Nongovernmental Organizatio
+      Authors: Marlies Glasius; Jelmer Schalk; Meta de Lange
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1093/isq/sqaa019
+
+23. [1s] 2020 | How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism
+      Authors: Sara M. T. Polo
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002720930811
+
+24. [1s] 2020 | A micro-level analysis of the contagion effect: Evidence from the Kurdish conflict
+      Authors: Zeki Sarıgil
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343320957386
+
+25. [1s] 2019 | How migration policies moderate the diffusion of terrorism
+      Authors: Tobias Böhmelt; Vincenzo Bove
+      Venue: European Journal of Political Research | DOI: https://doi.org/10.1111/1475-6765.12339
+
+26. [1s] 2019 | Does cultural proximity contain terrorism diffusion?
+      Authors: Tobias Böhmelt; Vincenzo Bove
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343319864425
+
+27. [1s] 2019 | Rethinking Democratic Diffusion: Bringing Regime Type Back In
+      Authors: Edward Goldring; Sheena Chestnut Greitens
+      Venue: Comparative Political Studies | DOI: https://doi.org/10.1177/0010414019852701
+
+28. [1s] 2019 | Spatial interdependence and instrumental variable models
+      Authors: Timm Betz; Scott Cook; Florian M Hollenbach
+      Venue: Political Science Research and Methods | DOI: https://doi.org/10.1017/psrm.2018.61
+
+29. [1s] 2019 | Institutional change in parliament through cross-border partisan emulation
+      Authors: Roman Senninger
+      Venue: West European Politics | DOI: https://doi.org/10.1080/01402382.2019.1578095
+
+30. [1s] 2018 | The Global Diffusion of Law: Transnational Crime and the Case of Human Trafficking
+      Authors: Beth A. Simmons; Paulette Lloyd; Brandon Stewart
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818318000036
+
+31. [1s] 2018 | Mass Media and the Diffusion of Collective Action in Authoritarian Regimes: The June 1953 
+      Authors: Charles Crabtree; Holger Kern; Steven Pfaff
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1093/isq/sqy007
+
+32. [1s] 2018 | Measurement Uncertainty in Spatial Models: A Bayesian Dynamic Measurement Model
+      Authors: Sebastian Juhl
+      Venue: Political Analysis | DOI: https://doi.org/10.1017/pan.2018.35
+
+33. [1s] 2017 | Geo-Nested Analysis: Mixed-Methods Research with Spatially Dependent Data
+      Authors: Imke Harbers; Matthew Ingram
+      Venue: Political Analysis | DOI: https://doi.org/10.1017/pan.2017.4
+
+34. [1s] 2016 | Party Policy Diffusion
+      Authors: Tobias Böhmelt; Lawrence Ezrow; Roni Lehrer
+      Venue: American Political Science Review | DOI: https://doi.org/10.1017/s0003055416000162
+
+35. [1s] 2016 | Spatial effects and party nationalization: The Geography of partisan support in Mexico
+      Authors: Imke Harbers
+      Venue: Electoral Studies | DOI: https://doi.org/10.1016/j.electstud.2016.11.016
+
+36. [1s] 2016 | The Contingent Diffusion of Parliamentary Oversight Institutions in the European Union
+      Authors: Nils‐Christian Bormann; Thomas Winzen
+      Venue: European Journal of Political Research | DOI: https://doi.org/10.1111/1475-6765.12149
+
+37. [1s] 2015 | The Diffusion of Nonviolent Campaigns
+      Authors: Kristian Skrede Gleditsch; Mauricio Rivera
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002715603101
+
+38. [1s] 2015 | The conditioning effect of protest history on the emulation of nonviolent conflict
+      Authors: Alex Braithwaite; Jessica Maves Braithwaite; Jeffrey Kucik
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343315593993
+
+39. [1s] 2015 | Firewall? or Wall on Fire? A Unified Framework of Conflict Contagion and the Role of Ethni
+      Authors: Nils W. Metternich; Shahryar Minhas; Michael D. Ward
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002715603452
+
+40. [1s] 2015 | Civil War Diffusion and the Emergence of Militant Groups, 1960–2001
+      Authors: Christopher Linebarger
+      Venue: International Interactions | DOI: https://doi.org/10.1080/03050629.2015.984809
+
+41. [1s] 2015 | Dependence Networks and the Diffusion of Domestic Political Institutions
+      Authors: Jay Goodliffe; Darren Hawkins
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002715596772
+
+42. [1s] 2015 | The hard impact of soft co-ordination: emulation, learning, and the convergence of collect
+      Authors: Sara Kahn‐Nisser
+      Venue: Journal of European Public Policy | DOI: https://doi.org/10.1080/13501763.2015.1022205
+
+43. [1s] 2014 | Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009
+      Authors: Erika Forsberg
+      Venue: International Interactions | DOI: https://doi.org/10.1080/03050629.2014.880702
+
+44. [1s] 2013 | Autocratic Institutions and Civil Conflict Contagion
+      Authors: Jessica Maves; Alex Braithwaite
+      Venue: The Journal of Politics | DOI: https://doi.org/10.1017/s0022381613000157
+
+45. [1s] 2013 | When have violent civil conflicts spread? Introducing a dataset of substate conflict conta
+      Authors: Nathan Black
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343313493634
+
+46. [1s] 2013 | Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Per
+      Authors: Hugh Ward; Peter John
+      Venue: Political Science Research and Methods | DOI: https://doi.org/10.1017/psrm.2013.1
+
+47. [1s] 2012 | Of Dominoes and Firewalls: The Domestic, Regional, and Global Politics of International Di
+      Authors: Etel Solingen
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/isqu.12034
+
+48. [1s] 2012 | When Conflict Spreads: Arab Spring and the Limits of Diffusion
+      Authors: Stephen M. Saideman
+      Venue: International Interactions | DOI: https://doi.org/10.1080/03050629.2012.726186
+
+49. [1s] 2012 | Paths to Financial Policy Diffusion: Statist Legacies in Latin America's Globalization
+      Authors: Sarah M. Brooks; Marcus J. Kurtz
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818311000385
+
+50. [1s] 2011 | The International Diffusion of Democracy
+      Authors: Johan A. Elkink
+      Venue: Comparative Political Studies | DOI: https://doi.org/10.1177/0010414011407474
+
+51. [1s] 2011 | Civil War Diffusion and Regional Motivations for Intervention
+      Authors: Jacob D. Kathman
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002711408009
+
+52. [1s] 2011 | The Global Diffusion of Regulatory Agencies
+      Authors: Jacint Jordana; David Levi‐Faur; Xavier Fernández‐i‐Marín
+      Venue: Comparative Political Studies | DOI: https://doi.org/10.1177/0010414011407466
+
+53. [1s] 2011 | Diffusion through Democracy
+      Authors: Katerina Linos
+      Venue: American Journal of Political Science | DOI: https://doi.org/10.1111/j.1540-5907.2011.00513.x
+
+54. [1s] 2011 | Alliances as Contiguity in Spatial Models of Military Expenditures
+      Authors: Alejandro Flores
+      Venue: Conflict Management and Peace Science | DOI: https://doi.org/10.1177/0738894211413064
+
+55. [1s] 2010 | The Company You Keep: International Socialization and the Diffusion of Human Rights Norms
+      Authors: Brian Greenhill
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/j.1468-2478.2009.00580.x
+
+56. [1s] 2010 | Resisting infection: How state capacity conditions conflict contagion
+      Authors: Alex Braithwaite
+      Venue: Journal of Peace Research | DOI: https://doi.org/10.1177/0022343310362164
+
+57. [1s] 2010 | Civil War Contagion and Neighboring Interventions1
+      Authors: Jacob D. Kathman
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/j.1468-2478.2010.00623.x
+
+58. [1s] 2010 | Constructing a Framework of Authoritarian Diffusion: Concepts, Dynamics, and Future Resear
+      Authors: Thomas Ambrosio
+      Venue: International Studies Perspectives | DOI: https://doi.org/10.1111/j.1528-3585.2010.00411.x
+
+59. [1s] 2010 | Spatial Effects in Dyadic Data
+      Authors: Eric Neumayer; Thomas Plümper
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818309990191
+
+60. [1s] 2010 | Galton’s Problem and Contagion in International Terrorism along Civilizational Lines
+      Authors: Eric Neumayer; Thomas Plümper
+      Venue: Conflict Management and Peace Science | DOI: https://doi.org/10.1177/0738894210374397
+
+61. [1s] 2008 | Interdependence in Comparative Politics
+      Authors: Robert J. Franzese; Jude C. Hays
+      Venue: Comparative Political Studies | DOI: https://doi.org/10.1177/0010414007313122
+
+62. [1s] 2007 | Spatial Econometric Models of Cross-Sectional Interdependence in Political Science Panel a
+      Authors: Robert J. Franzese; Jude C. Hays
+      Venue: Political Analysis | DOI: https://doi.org/10.1093/pan/mpm005
+
+63. [1s] 2007 | A race to liberalization? Diffusion of economic policy reform among OECD-economies
+      Authors: Hans Pitlik
+      Venue: Public Choice | DOI: https://doi.org/10.1007/s11127-006-9140-y
+
+64. [1s] 2006 | Diffusion and the International Context of Democratization
+      Authors: Kristian Skrede Gleditsch; Michael D. Ward
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818306060309
+
+65. [1s] 2006 | Introduction: The International Diffusion of Liberalism
+      Authors: Beth A. Simmons; Frank Dobbin; Geoffrey Garrett
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818306060267
+
+66. [1s] 2006 | Competing for Capital: The Diffusion of Bilateral Investment Treaties, 1960–2000
+      Authors: Zachary Elkins; Andrew T. Guzmán; Beth A. Simmons
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818306060279
+
+67. [1s] 2006 | Globalization as ‘Galton's Problem’: The Missing Link in the Analysis of Diffusion Pattern
+      Authors: Detlef Jahn
+      Venue: International Organization | DOI: https://doi.org/10.1017/s0020818306060127
+
+68. [1s] 2003 | Causes of Peace: Democracy, Interdependence, and International Organizations, 1885-1992
+      Authors: John R. Oneal; Bruce Russett; Michael L. Berbaum
+      Venue: International Studies Quarterly | DOI: https://doi.org/10.1111/1468-2478.4703004
+
+69. [1s] 2002 | Economic Growth, Civil Wars, and Spatial Spillovers
+      Authors: James Murdoch; Todd Sandler
+      Venue: Journal of Conflict Resolution | DOI: https://doi.org/10.1177/0022002702046001006
+

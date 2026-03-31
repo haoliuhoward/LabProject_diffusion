@@ -27,7 +27,7 @@ LabProject_diffusion/
     └── paper-candidates.md
 ```
 
-## Already Replicated
+## Already Replicated (14 in total)
 
 | Paper | Status | Replicated By | CLEAN Works? | Reason |
 |-------|--------|---------------|--------------|--------|
@@ -46,48 +46,68 @@ LabProject_diffusion/
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 
-### Ready to be Replicated (checked by Zihuan)
-| Paper | Status |
-| --- | --- |
+### Replication assigned
 | Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki |
 | Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki |
-| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
-| Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
-| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | No data |
-| Ruggeri et al. (2017) PSRM — Counterbalancing, Spatial Dependence, Peer Effects | No data |
-| Lindstädt et al. (2017) PSRM — Diffusion in Congress | No data |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu |
+
+### Ready to be Replicated (Data Available, checked by Zihuan, 38 in total, need to check whether it has matrix or time variation)
+| Paper | Status |
+| --- | --- |
+| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z |
+| Ruggeri et al. (2017) PSRM — Counterbalancing, Spatial Dependence, Peer Effects | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CPF2GY |
+| Lindstädt et al. (2017) PSRM — Diffusion in Congress | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CJZB8X |
+| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KYBEM4 |
+| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5O3EOW |
+| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VSTO1K |
+| Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UVSMOV |
+| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/23970 |
+| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/28322 |
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FEA4T2 |
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C1O8HS |
+| Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Data Available: https://academic.oup.com/isq/article/66/1/sqab092/6473249 |
+| Gilardi (2021) AJPS — Policy Diffusion: The Issue-Definition Stage | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QEMNP1 |
+| Büyükkeles & Özel (2019) ISQ — Regulatory Convergence in the Financial Periphery | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VBNPJS |
+| Chaney (2023) AJPS — Policy Networks Across Political Systems | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NKCDCO |
+| Price (2018) ISQ — Diffusion Effect of Militant Leadership Decapitation | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VFNSX6 |
+| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2XP8YF |
+| Simmons & Elkins (2004) APSR — Globalization of Liberalization | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/81MG6A |
+| Desmarais & Cranmer (2022) ISQ — Modeling Diffusion through Network Analysis | Data Available: https://academic.oup.com/isq/article/66/1/sqab087/6425795?login=true&guestAccessKey=#no-access-message#no-access-message |
+| Barthel & Neumayer (2012) ISQ — Diffusion of Double Taxation Treaties | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0COWAL |
+| Swank (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
+| Doten-Snitker, K. (2024) CPS — The Diffusion of Exclusion: Medieval Expulsions of Jews | Data Available: https://doi.org/10.7910/DVN/SCJL8I |
+| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
+| Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
+| Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | Data Available: https://doi.org/10.7910/DVN/25769 |
+| Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | Data Available: https://doi.org/10.7910/DVN/B4VBVM |
+| Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | ⚠️ Check density before replication — Data Available: https://doi.org/10.7910/DVN/40FMWG |
+
+### New candidates (Data availability: TBD)
+| Miller (2016) JCR — Are Coups Really Contagious? | Data Available: need to find link |
+| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
+| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | No data |
+| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | No data |
 | Metternich et al. (2017) JCR — Firewall? Or Wall on Fire? | No data |
 | Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | No data |
-| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | No data |
-| Gade et al. (2019) JPR — Fratricide in Rebel Movements | No time variation |
-| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | No data |
-| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
-| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Zihuan |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu |
-| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | No data |
-| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | No data |
-| Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | No data |
-| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | No data |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu |
-| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
-| Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
-| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
-| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | No data |
-| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | No data |
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | No data |
-| The Social Construction of Global Health Priorities: An Empirical Analysis of Contagion in Bilateral Health Aid (ISQ 2022) | Data Available |
-| Policy Diffusion: The Issue-Definition Stage (AJPS 2021) | Data Available |
-| Regulatory Convergence in the Financial Periphery: How Interdependence Shapes Regulators’ Decisions (ISQ 2019) | Data Available |
-| Policy Networks Across Political Systems (AJPS 2023) | Data Available |
-| Killing Two Birds with One Stone? Examining the Diffusion Effect of Militant Leadership Decapitation (ISQ 2018) | Data Available |
-| Diffusing Political Concerns: How Unemployment Information Passed between Social Ties Influences Danish Voters (JOP 2022) | TBD, no access to Chicago Press, need to check whether the data available |
-| Navigating the Range of Statistical Tools for Inferential Network Analysis (AJPS 2017) | Data Available |
-| The Globalization of Liberalization: Policy Diffusion in the International Political Economy (APSR 2004) | Data Available |
-| Modeling Diffusion through Statistical Network Analysis: A Simulation Study and Empirical Application to Same-Sex Marriage (ISQ 2022) | Data Available |
-| Are Coups Really Contagious? An Extreme Bounds Analysis of Political Diffusion (JCR 2016) | Data Available |
-| Competing for Scarce Foreign Capital: Spatial Dependence in the Diffusion of Double Taxation Treaties (ISQ 2012) | Data Available |
-| Networks as Channels of Policy Diffusion: Explaining Worldwide Changes in Capital Taxation, 1998–2006 (ISQ 2010) | Data Available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | No data |
+| Böhmelt, T. & Bove, V. (2019) JPR — Does Cultural Proximity Contain Terrorism Diffusion? | No data |
+| Böhmelt, T., Ezrow, L. & Lehrer, R. (2016) APSR — Party Policy Diffusion | No data (APSR requires replication — check Cambridge Core supplementary) |
+| Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | No data |
+| Metternich, N.W., Minhas, S. & Ward, M.D. (2015) JCR — Firewall? or Wall on Fire? Conflict Contagion and the Role of Ethnic Networks | No data |
+| Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | No data |
+| Flores, A. (2011) CMPS — Alliances as Contiguity in Spatial Models of Military Expenditures | No data |
+| Oneal, J.R., Russett, B. & Berbaum, M.L. (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | No data |
 
+
+### New candidates (Matrix, time-variation, method papers: TBD)
+| Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
+| Gade et al. (2019) JPR — Fratricide in Rebel Movements | No time variation |
+| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
+| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
+| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
+| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
+| Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
 
 ## Claude Code slash commands
 
