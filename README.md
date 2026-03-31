@@ -84,6 +84,8 @@ LabProject_diffusion/
 | Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | ⚠️ Check density before replication — Data Available: https://doi.org/10.7910/DVN/40FMWG |
 
 ### New candidates (Data availability: TBD)
+| Paper | Status |
+| --- | --- |
 | Miller (2016) JCR — Are Coups Really Contagious? | Data Available: need to find link |
 | Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
 | Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | No data |
@@ -101,6 +103,8 @@ LabProject_diffusion/
 
 
 ### New candidates (Matrix, time-variation, method papers: TBD)
+| Paper | Status |
+| --- | --- |
 | Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
 | Gade et al. (2019) JPR — Fratricide in Rebel Movements | No time variation |
 | Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
