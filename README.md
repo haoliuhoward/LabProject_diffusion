@@ -47,6 +47,8 @@ LabProject_diffusion/
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
 
 ### Replication assigned
+| Paper | Status |
+| --- | --- |
 | Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki |
 | Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki |
 | Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu |
