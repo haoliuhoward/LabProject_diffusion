@@ -40,19 +40,19 @@ LabProject_diffusion/
 | Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
 | Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy | 
 | Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Completed | Insu | No | Double Check |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Completed | Insu | No | Double Check |
 | Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
 | Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
 | How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
 | Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki | Not applicable | Methodological paper |
 | Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki | Not applicable | No Wy |
 | Chaney (2023) AJPS — Policy Networks Across Political Systems | Insu | Not applicable | No Wy |
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu | No | Double Check |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu | No | Double Check |
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Not Wy data |
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | No Wy data |
 
-### Replication assigned
+### Replication Assigned
 | Paper | Status |
 | --- | --- |
 
