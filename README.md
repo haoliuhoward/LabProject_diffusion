@@ -34,25 +34,28 @@ LabProject_diffusion/
 | Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes | |
 | Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 |
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) |
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
 | Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | Completed | Zihuan | NO | R² = 0.102: block membership explains only 10% of Wy, and geographical contiguity is a strong direct connection not just a proxy of similarity |
+| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
+| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
+| Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy | 
 | Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
 | Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
 | Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
 | How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
+| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki | Not applicable | Methodological paper |
+| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki | Not applicable | No Wy |
+| Chaney (2023) AJPS — Policy Networks Across Political Systems | Insu | Not applicable | No Wy |
 | Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
-| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
-| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
-| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
-| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
-| Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | Author did not provide exact Wy raw data |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu | No | Double Check |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu | No | Double Check |
+| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Not Wy data |
+| Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | No Wy data |
 
 ### Replication assigned
 | Paper | Status |
 | --- | --- |
-| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Deki |
-| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Deki |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Insu |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Insu |
+
 
 ### Ready to be Replicated (Data Available, checked by Zihuan, 38 in total, need to check whether it has matrix or time variation)
 | Paper | Status |
@@ -62,16 +65,13 @@ LabProject_diffusion/
 | Lindstädt et al. (2017) PSRM — Diffusion in Congress | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CJZB8X |
 | Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KYBEM4 |
 | Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5O3EOW |
-| Beck, Gleditsch & Beardsley (2006) JoP — Space Is More than Geography | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VSTO1K |
 | Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UVSMOV |
 | Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/23970 |
 | Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/28322 |
 | Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FEA4T2 |
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C1O8HS |
-| Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Data Available: https://academic.oup.com/isq/article/66/1/sqab092/6473249 |
 | Gilardi (2021) AJPS — Policy Diffusion: The Issue-Definition Stage | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QEMNP1 |
 | Büyükkeles & Özel (2019) ISQ — Regulatory Convergence in the Financial Periphery | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VBNPJS |
-| Chaney (2023) AJPS — Policy Networks Across Political Systems | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NKCDCO |
 | Price (2018) ISQ — Diffusion Effect of Militant Leadership Decapitation | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VFNSX6 |
 | Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2XP8YF |
 | Simmons & Elkins (2004) APSR — Globalization of Liberalization | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/81MG6A |
