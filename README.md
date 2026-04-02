@@ -91,18 +91,7 @@ LabProject_diffusion/
 | Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002720930811 |
 | Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | ⚠️ Check density before replication — Data Available: https://doi.org/10.7910/DVN/40FMWG |
 
-### New candidates (Data availability: TBD)
-| Paper | Status |
-| --- | --- |
-| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
-| Franzese & Hays (2017) PA — Spatial Econometric Models of Cross-Sectional Interdependence | Methodological paper |
-| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | Data available, but no Wy data : https://www.prio.org/journals/jpr/replicationdata |
-| Böhmelt, T. & Bove, V. (2019) JPR — Does Cultural Proximity Contain Terrorism Diffusion? | Data available, but failed to open the link: https://journals.sagepub.com/doi/10.1177/0022343319864425 |
-| Böhmelt, T., Ezrow, L. & Lehrer, R. (2016) APSR — Party Policy Diffusion | No data (APSR requires replication — check Cambridge Core supplementary) |
-| Flores, A. (2011) CMPS — Alliances as Contiguity in Spatial Models of Military Expenditures | Data available, but failed to open the link:: https://journals.sagepub.com/doi/10.1177/0738894211413064 http://privatewww.essex.ac.uk/~ksg/ |
-| Oneal, J.R., Russett, B. & Berbaum, M.L. (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available, but failed to open the link: https://academic.oup.com/isq/article/47/3/371/1923564?login=true&guestAccessKey=#authorNotesSectionTitle |
-
-### New candidates (Matrix, time-variation, method papers: TBD)
+### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
 | Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
@@ -111,7 +100,18 @@ LabProject_diffusion/
 | Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
 | Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
 | Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
+| Franzese & Hays (2017) PA — Spatial Econometric Models of Cross-Sectional Interdependence | Methodological paper |
 | Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
+
+### No data (Data availability: TBD)
+| Paper | Status |
+| --- | --- |
+| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
+| Böhmelt, T., Ezrow, L. & Lehrer, R. (2016) APSR — Party Policy Diffusion | No data (APSR requires replication — check Cambridge Core supplementary) |
+| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | Data available, but no Wy data : https://www.prio.org/journals/jpr/replicationdata |
+| Böhmelt, T. & Bove, V. (2019) JPR — Does Cultural Proximity Contain Terrorism Diffusion? | Data available, but failed to open the link: https://journals.sagepub.com/doi/10.1177/0022343319864425 |
+| Flores, A. (2011) CMPS — Alliances as Contiguity in Spatial Models of Military Expenditures | Data available, but failed to open the link: https://journals.sagepub.com/doi/10.1177/0738894211413064 http://privatewww.essex.ac.uk/~ksg/ |
+| Oneal, J.R., Russett, B. & Berbaum, M.L. (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available, but failed to open the link: https://academic.oup.com/isq/article/47/3/371/1923564?login=true&guestAccessKey=#authorNotesSectionTitle |
 
 ## Claude Code slash commands
 
