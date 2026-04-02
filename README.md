@@ -49,7 +49,7 @@ LabProject_diffusion/
 | Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Completed | Deki | Not applicable | Methodological paper |
 | Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Completed | Deki | Not applicable | No Wy |
 | Chaney (2023) AJPS — Policy Networks Across Political Systems | Completed | Insu | Not applicable | No Wy |
-| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | Not Wy data |
+| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | No Wy data |
 | Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | No Wy data |
 
 ### Replication Assigned
@@ -83,26 +83,24 @@ LabProject_diffusion/
 | Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
 | Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | Data Available: https://doi.org/10.7910/DVN/25769 |
 | Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | Data Available: https://doi.org/10.7910/DVN/B4VBVM |
+| Miller (2016) JCR — Are Coups Really Contagious? | Data Available: https://journals.sagepub.com/doi/abs/10.1177/0022002716649232 |
+| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002719826234 |
+| Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | Data available: https://www.prio.org/journals/jpr/replicationdata |
+| Metternich, N.W., Minhas, S. & Ward, M.D. (2017) JCR — Firewall? or Wall on Fire? Conflict Contagion and the Role of Ethnic Networks | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002715603452 |
+| Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002715596772 |
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002720930811 |
 | Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | ⚠️ Check density before replication — Data Available: https://doi.org/10.7910/DVN/40FMWG |
 
 ### New candidates (Data availability: TBD)
 | Paper | Status |
 | --- | --- |
-| Miller (2016) JCR — Are Coups Really Contagious? | Data Available: need to find link |
 | Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
-| Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence | No data |
-| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | No data |
-| Metternich et al. (2017) JCR — Firewall? Or Wall on Fire? | No data |
-| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | No data |
-| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | No data |
-| Böhmelt, T. & Bove, V. (2019) JPR — Does Cultural Proximity Contain Terrorism Diffusion? | No data |
+| Franzese & Hays (2017) PA — Spatial Econometric Models of Cross-Sectional Interdependence | Methodological paper |
+| Weidmann (2015) JPR — Communication Networks and Ethnic Conflict | Data available, but no Wy data : https://www.prio.org/journals/jpr/replicationdata |
+| Böhmelt, T. & Bove, V. (2019) JPR — Does Cultural Proximity Contain Terrorism Diffusion? | Data available, but failed to open the link: https://journals.sagepub.com/doi/10.1177/0022343319864425 |
 | Böhmelt, T., Ezrow, L. & Lehrer, R. (2016) APSR — Party Policy Diffusion | No data (APSR requires replication — check Cambridge Core supplementary) |
-| Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | No data |
-| Metternich, N.W., Minhas, S. & Ward, M.D. (2015) JCR — Firewall? or Wall on Fire? Conflict Contagion and the Role of Ethnic Networks | No data |
-| Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | No data |
-| Flores, A. (2011) CMPS — Alliances as Contiguity in Spatial Models of Military Expenditures | No data |
-| Oneal, J.R., Russett, B. & Berbaum, M.L. (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | No data |
-
+| Flores, A. (2011) CMPS — Alliances as Contiguity in Spatial Models of Military Expenditures | Data available, but failed to open the link:: https://journals.sagepub.com/doi/10.1177/0738894211413064 http://privatewww.essex.ac.uk/~ksg/ |
+| Oneal, J.R., Russett, B. & Berbaum, M.L. (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available, but failed to open the link: https://academic.oup.com/isq/article/47/3/371/1923564?login=true&guestAccessKey=#authorNotesSectionTitle |
 
 ### New candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
