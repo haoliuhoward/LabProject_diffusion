@@ -46,6 +46,22 @@ LabProject_diffusion/
 | Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
 | Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy | 
 
+### CLEAN doesn't work
+| Paper | Status | Replicated By | CLEAN Works? | Reason |
+|-------|--------|---------------|--------------|--------|
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
+| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Completed | Insu | No | Double Check |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Completed | Insu | No | Double Check |
+| Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
+| Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
+| How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
+| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Completed | Deki | Not applicable | Methodological paper |
+| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Completed | Deki | Not applicable | No Wy |
+| Chaney (2023) AJPS — Policy Networks Across Political Systems | Completed | Insu | Not applicable | No Wy |
+| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | No Wy data |
+| Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | No Wy data |
 
 ### Ready to be Replicated (Data Available, checked by Zihuan, need to check whether it has matrix or time variation)
 | Paper | Status |
@@ -67,27 +83,11 @@ LabProject_diffusion/
 | Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | Data Available: https://doi.org/10.7910/DVN/B4VBVM |
 
 ### Papers using STATA
+| Paper | Status |
+| --- | --- |
 | Miller (2016) JCR — Are Coups Really Contagious? | Data Available: https://journals.sagepub.com/doi/abs/10.1177/0022002716649232 STATA |
 | Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | Data available: https://www.prio.org/journals/jpr/replicationdata STATA|
 | Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002720930811 STATA |
-
-
-### CLEAN doesn't work
-| Paper | Status | Replicated By | CLEAN Works? | Reason |
-|-------|--------|---------------|--------------|--------|
-| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
-| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Completed | Insu | No | Double Check |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Completed | Insu | No | Double Check |
-| Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
-| Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
-| How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
-| Desmarais & Uppala (2023) PA — Contagion, Confounding, Causality | Completed | Deki | Not applicable | Methodological paper |
-| Malang et al. (2019) BJPS — Networks and Social Influence (EU legislatures) | Completed | Deki | Not applicable | No Wy |
-| Chaney (2023) AJPS — Policy Networks Across Political Systems | Completed | Insu | Not applicable | No Wy |
-| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements | Completed | Insu | Ambiguous | No Wy data |
-| Gannon (2025) AJPS — Complementarity in Alliances | Completed | Insu | Ambiguous | No Wy data |
 
 
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
