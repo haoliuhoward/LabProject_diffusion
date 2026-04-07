@@ -73,6 +73,8 @@ LabProject_diffusion/
 
 
 ### CLEAN doesn't work
+| Paper | Status | Replicated By | CLEAN Works? | Reason |
+|-------|--------|---------------|--------------|--------|
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
 | Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
 | Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
