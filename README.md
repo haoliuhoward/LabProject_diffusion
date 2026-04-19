@@ -50,10 +50,7 @@ LabProject_diffusion/
 | Paper | Status | Replicated By | CLEAN Works? | Reason |
 |-------|--------|---------------|--------------|--------|
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed | Deki | No | Very sparse network |
-| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) |
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | Double Check |
-| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | Completed | Insu | No | Double Check |
-| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance | Completed | Insu | No | Double Check |
+| Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance  | Completed | Insu | No | No time variation |
 | Hinkle (2014) AJPS — Federal Courts and State Policy Diffusion | Completed | Zihuan | Not applicable | No Wy |
 | Genovese, Kern & Martin (2017) ISQ — Policy Alteration | Completed | Zihuan | Not applicable | All nodes fully connected, no CLEAN blocks |
 | How Parties React to Voter Transitions (year/journal TBD) | Completed | Jack | Not applicable | W matrix encodes co-exposure (vote loss weights), not true network contagion; CLEAN requires genuine network dependency |
@@ -66,39 +63,25 @@ LabProject_diffusion/
 ### Papers needs Alex to check
 | Paper | Status |
 | --- | --- |
-| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FEA4T2 |
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C1O8HS |
-| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2XP8YF |
-| Simmons & Elkins (2004) APSR — Globalization of Liberalization | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/81MG6A |
-| Desmarais & Cranmer (2022) ISQ — Modeling Diffusion through Network Analysis | Data Available: https://academic.oup.com/isq/article/66/1/sqab087/6425795?login=true&guestAccessKey=#no-access-message#no-access-message |
-| Barthel & Neumayer (2012) ISQ — Diffusion of Double Taxation Treaties | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0COWAL |
-| Swank (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
-| Doten-Snitker, K. (2024) CPS — The Diffusion of Exclusion: Medieval Expulsions of Jews | Data Available: https://doi.org/10.7910/DVN/SCJL8I |
-| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
+| Cao (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
 | Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
+| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2XP8YF |
+| Desmarais & Cranmer (2022) ISQ — Modeling Diffusion through Network Analysis | Data Available: https://academic.oup.com/isq/article/66/1/sqab087/6425795?login=true&guestAccessKey=#no-access-message#no-access-message |
+| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
 | Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | Data Available: https://doi.org/10.7910/DVN/25769 |
 | Braithwaite, Braithwaite & Kucik (2015) JPR — The Conditioning Effect of Protest History on the Emulation of Nonviolent Conflict | Data available: https://www.prio.org/journals/jpr/replicationdata |
 | Black (2013) JPR — When Have Violent Civil Conflicts Spread? | Data available: https://www.prio.org/journals/jpr/replicationdata |
+| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/4HFPNH  |
+| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBBAE3 |
+| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | https://dataverse.harvard.edu/dataset.xhtml;jsessionid=908396565f2ebd923f8676adfb0c?persistentId=doi%3A10.7910%2FDVN%2FHOLUME&version=&q=&fileTypeGroupFacet=%22Code%22&fileAccess=&fileTag=&fileSortField=&fileSortOrder= |
+| Böhmelt & Bove (2019) EJPR — How Migration Policies Moderate the Diffusion of Terrorism | https://onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12339 |
 
 ### Papers using STATA
 | Paper | Status |
 | --- | --- |
 | Miller (2016) JCR — Are Coups Really Contagious? | Data Available: https://journals.sagepub.com/doi/abs/10.1177/0022002716649232 STATA |
-| Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | Data available: https://www.prio.org/journals/jpr/replicationdata STATA|
-| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002720930811 STATA |
-
-
-### Papers need to ask for access
-| Paper | Status |
-| --- | --- |
-| Beardsley (2011) JoP — Peacekeeping and the Contagion of Armed Conflict | Data available: Chicago Press, no access |
-| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | Data available: Chicago Press, no access |
-| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | Data available: Chicago Press, no access |
-| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | TBD, no access to Chicago Press |
-| Maves & Braithwaite (2013) JoP — Autocratic Institutions and Civil Conflict Contagion | Data available: Chicago Press, no access |
-| Böhmelt & Bove (2019) EJPR — How Migration Policies Moderate the Diffusion of Terrorism | Data available: https://www.cambridge.org/core/journals/european-journal-of-political-research/article/abs/how-migration-policies-moderate-the-diffusion-of-terrorism/B261BD9B730EF26CD34F27A30FFA0A4B no access |
-| Bormann & Winzen (2016) EJPR — The Contingent Diffusion of Parliamentary Oversight Institutions in the EU | Data available: https://www.cambridge.org/core/journals/european-journal-of-political-research/article/abs/contingent-diffusion-of-parliamentary-oversight-institutions-in-the-european-union/D64607B01321B4DE044E9C0675F1643E no access |
-
+| Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed | Deki | TBD | The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) | Completed | 
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Insu | No | No time variation |
 
 
 ### Papers waiting for cheking
@@ -123,18 +106,21 @@ LabProject_diffusion/
 | Murdoch & Sandler (2002) JCR — Economic Growth, Civil Wars, and Spatial Spillovers | Data available: |
 
 
-
-
 ### Paper Assigned
 | Paper | Assignee |
 | --- | --- |
-| Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | Zihuan, Data Available: https://doi.org/10.7910/DVN/B4VBVM |
-
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Deki |
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Deki |
 
 
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
+| Barthel & Neumayer (2012) ISQ — Diffusion of Double Taxation Treaties | spatial Cox proportional hazard model |
+| Doten-Snitker, K. (2024) CPS — The Diffusion of Exclusion: Medieval Expulsions of Jews | Bayesian hierarchical logistic regression |
+| Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | no time variation |
+| Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | No time variation |
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | No time variation |
 | Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | Data available: logit model |
 | Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | Data available: logit analysis |
 | Elkink (2011) CPS — The International Diffusion of Democracy | Data available: computer simulation model |
@@ -181,9 +167,14 @@ LabProject_diffusion/
 | Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
 | Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data Available: https://doi.org/10.7910/DVN/40FMWG, but no matrix |
 
-### No data (Data availability: TBD)
+### No data (Data availability: No data)
 | Paper | Status |
 | --- | --- |
+| Bormann & Winzen (2016) EJPR — The Contingent Diffusion of Parliamentary Oversight Institutions in the EU | https://onlinelibrary.wiley.com/doi/10.1111/1475-6765.12149 no data |
+| Beardsley (2011) JoP — Peacekeeping and the Contagion of Armed Conflict | Data available: No replication data |
+| Simmons & Elkins (2004) APSR — Globalization of Liberalization | No replication code |
+| Maves & Braithwaite (2013) JoP — Autocratic Institutions and Civil Conflict Contagion | Data available: No replication data |
+| Shaw et al. (TBD) — Show Me the Money: Interjurisdictional Political Competition and Fiscal Extraction in China | No data |
 | Gleditsch & Rivera (2015) JCR — The Diffusion of Nonviolent Campaigns | Data available: no |
 | Kahn-Nisser (2015) JEPP — The Hard Impact of Soft Co-ordination | Data available: no |
 | Plümper & Neumayer (2009) EJPR — Model Specification in the Analysis of Spatial Dependence | Data available: https://onlinelibrary.wiley.com/doi/full/10.1111/j.1475-6765.2009.01900.x failed to open the liink |
