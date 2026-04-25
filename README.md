@@ -56,8 +56,8 @@ LabProject_diffusion/
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Deki |
 
 ### Matrices missing
-| Paper | Status | Replicated By | CLEAN Works? | Reason |
-|-------|--------|---------------|--------------|--------|
+| Paper | Status | 
+|-------|--------|
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements |  No Wy data |
 | Gannon (2025) AJPS — Complementarity in Alliances |  No Wy data |
 | How Parties React to Voter Transitions (year/journal TBD) | W matrix encodes co-exposure (vote loss weights) |
