@@ -49,14 +49,12 @@ LabProject_diffusion/
 | Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged Spatial OLS | SAR model | 
 | Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | No |  changes in the rho value, but the statistical significance (stars) remains unchanged spatial  | Logit Model | 
 | Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged | Negative Binomial Model | 
-| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Completed | Deki | No | the network is too small to apply CLEAN package | 
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No | The rho value and the SE changed after clean-adjustment | 
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Completed | Deki | No | the network is too small to apply CLEAN package | Regression Model| 
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No | The rho value and the SE changed after clean-adjustment | OLS Model | 
 
 ### Paper Assigned
 | Paper | Assignee |
 | --- | --- |
-
-
 
 ### Matrices missing
 | Paper | Status | 
@@ -66,8 +64,8 @@ LabProject_diffusion/
 | Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
 | Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QDELJ8 logit model |
 | Black (2013) JPR — When Have Violent Civil Conflicts Spread? | Data available: https://www.prio.org/journals/jpr/replicationdata logit model |
-| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | Data available: logit model |
-| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | Data available: logit analysis |
+| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model |
+| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis |
 
 ### Papers waiting for cheking
 | Paper | Status |
