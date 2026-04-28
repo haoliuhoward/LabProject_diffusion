@@ -46,11 +46,11 @@ LabProject_diffusion/
 | Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%)  | Bayesian model | 
 | Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag | OLS model | 
 | Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | block membership explains only 2.9% of Wy  | OLS models | 
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No |  | Spatial OLS model | 
-| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | No |  | Logit Model | 
-| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | No |  | Negative Binomial Model | 
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No | R²=0.063 for first time period, and R²=0.268 for the second | Spatial OLS model | 
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | No | R²=0.264  | Logit Model | 
+| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | No | too complicated model | Negative Binomial Model | 
 | Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Completed | Deki | No | the network is too small to apply CLEAN package | Regression Model| 
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No | The rho value and the SE changed after clean-adjustment | OLS Model | 
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No |  | OLS Model | 
 
 ### Paper Assigned
 | Paper | Assignee |
