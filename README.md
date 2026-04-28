@@ -31,23 +31,23 @@ LabProject_diffusion/
 
 | Paper | Status | Replicated By | CLEAN Works? | Reason |
 |-------|--------|---------------|--------------|--------|
-| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes | |
-| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 |
+| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes | Sar OLS model |
+| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 Linear Regression Model  |
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) |
-| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Completed | Deki | Yes | Using MATLAB, CLEAN works so well that, after incorporating it, the significance (stars) of the initial rho values disappears for both models. The R-squared from the collinearity check does not seem to explain this, as it is only 0.270. |
+| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Completed | Deki | Yes | Using MATLAB, CLEAN works so well that, after incorporating it, the significance (stars) of the initial rho values disappears for both models. The R-squared from the collinearity check does not seem to explain this, as it is only 0.270. SAR probit  |
 
 
 ### Failed Replication
-| Paper | Status | Replicated By | CLEAN Works? | Reason |
+| Paper | Status | Replicated By | CLEAN Works? | Reason | Model Used |
 |-------|--------|---------------|--------------|--------|
-| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | Completed | Deki | No | the significance of the rho values does not change. However, there are some changes in the point estimates of rho and their standard errors after incorporating CLEAN. The R-squared for the collinearity check is 0.450. |
-| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | Completed | Zihuan | NO | R² = 0.102: block membership explains only 10% of Wy, and geographical contiguity is a strong direct connection not just a proxy of similarity |
-| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%) |
-| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag |
-| Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy | 
-| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged | 
-| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged | 
-| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged | 
+| Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | Completed | Deki | No | the significance of the rho values does not change. However, there are some changes in the point estimates of rho and their standard errors after incorporating CLEAN. The R-squared for the collinearity check is 0.450. | OLS model | 
+| Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | Completed | Zihuan | NO | R² = 0.102: block membership explains only 10% of Wy, and geographical contiguity is a strong direct connection not just a proxy of similarity  | SAR model | 
+| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%)  | Bayesian model | 
+| Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag | OLS model | 
+| Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy  | OLS models | 
+| Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged Spatial OLS | SAR model | 
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged spatial  | Logit Model | 
+| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged | Negative Binomial Model | 
 
 ### Paper Assigned
 | Paper | Assignee |
@@ -58,17 +58,13 @@ LabProject_diffusion/
 ### Matrices missing
 | Paper | Status | 
 |-------|--------|
-| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements |  No Wy data |
-| Gannon (2025) AJPS — Complementarity in Alliances |  No Wy data |
-| How Parties React to Voter Transitions (year/journal TBD) | W matrix encodes co-exposure (vote loss weights) |
-| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | No Wy data |
 | Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z no matrix |
 | Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002715596772 No matrix |
-| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
 | Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
-| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
-| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
-| Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data Available: https://doi.org/10.7910/DVN/40FMWG, but no matrix |
+| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QDELJ8 logit model |
+| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | Data available: https://www.prio.org/journals/jpr/replicationdata logit model |
+| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | Data available: logit model |
+| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | Data available: logit analysis |
 
 ### Papers needs Alex to check
 | Paper | Status |
@@ -93,13 +89,19 @@ LabProject_diffusion/
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
+| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | No Wy data |
+| How Parties React to Voter Transitions (year/journal TBD) | W matrix encodes co-exposure (vote loss weights) |
+| Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data Available: https://doi.org/10.7910/DVN/40FMWG, but no matrix |
+| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
+| Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
+| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
+| Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements |  No Wy |
+| Gannon (2025) AJPS — Complementarity in Alliances |  No Wy |
 | Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed by Deki: The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) Checked by Zihuan, No time dimension | 
 | Elkins, Guzmán & Simmons (2006) IO — Competing for Capital: The Diffusion of Bilateral Investment Treaties, 1959–2000 | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QJQYPK Cox PH Model |
-| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QDELJ8 logit model |
 | Braithwaite (2010) JPR — Resisting Infection: How State Capacity Conditions Conflict Contagion | Data available: https://www.prio.org/journals/jpr/replicationdata not Sar Model |
 | Greenhill (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GLEY3J Ordered probit Model |
 | Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | https://dataverse.harvard.edu/dataset.xhtml;jsessionid=908396565f2ebd923f8676adfb0c?persistentId=doi%3A10.7910%2FDVN%2FHOLUME&version=&q=&fileTypeGroupFacet=%22Code%22&fileAccess=&fileTag=&fileSortField=&fileSortOrder= No Wy |
-| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | Data available: https://www.prio.org/journals/jpr/replicationdata logit model |
 | Desmarais & Cranmer (2022) ISQ — Modeling Diffusion through Network Analysis | FHC estimato Model |
 | Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence in Political Science Panel and Time-Series-Cross-Section Data | Method Paper |
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Method Paper |
@@ -109,8 +111,6 @@ LabProject_diffusion/
 | Doten-Snitker, K. (2024) CPS — The Diffusion of Exclusion: Medieval Expulsions of Jews | Bayesian hierarchical logistic regression |
 | Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | no time variation |
 | Böhmelt, T. (2016) JPR — The Importance of Conflict Characteristics for the Diffusion of International Mediation | No time variation |
-| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | Data available: logit model |
-| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | Data available: logit analysis |
 | Elkink (2011) CPS — The International Diffusion of Democracy | Data available: computer simulation model |
 | Brooks & Kurtz (2012) IO — Paths to Financial Policy Diffusion: Statist Legacies in Latin America's Globalization | Data available: time-series analysis model |
 | Saideman (2012) II — When Conflict Spreads: Arab Spring and the Limits of Diffusion | Data available: qualitative research |
