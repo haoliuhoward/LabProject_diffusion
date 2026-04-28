@@ -39,7 +39,7 @@ LabProject_diffusion/
 
 ### Failed Replication
 | Paper | Status | Replicated By | CLEAN Works? | Reason | Model Used |
-|-------|--------|---------------|--------------|--------|
+|-------|--------|---------------|--------------|--------| --------|
 | Steinwand (2015) IO — Compete or Coordinate? Aid Fragmentation and Lead Donorship | Completed | Deki | No | the significance of the rho values does not change. However, there are some changes in the point estimates of rho and their standard errors after incorporating CLEAN. The R-squared for the collinearity check is 0.450. | OLS model | 
 | Wimpy, Whitten & Williams (2021) JoP — X Marks the Spot | Completed | Zihuan | NO | R² = 0.102: block membership explains only 10% of Wy, and geographical contiguity is a strong direct connection not just a proxy of similarity  | SAR model | 
 | Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%)  | Bayesian model | 
