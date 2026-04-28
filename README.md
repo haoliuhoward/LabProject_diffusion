@@ -29,12 +29,13 @@ LabProject_diffusion/
 
 ### Successful Replication 
 
-| Paper | Status | Replicated By | CLEAN Works? | Reason |
-|-------|--------|---------------|--------------|--------|
-| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes | Sar OLS model |
-| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 Linear Regression Model  |
-| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) |
-| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Completed | Deki | Yes | Using MATLAB, CLEAN works so well that, after incorporating it, the significance (stars) of the initial rho values disappears for both models. The R-squared from the collinearity check does not seem to explain this, as it is only 0.270. SAR probit  |
+| Paper | Status | Replicated By | CLEAN Works? | Reason | Model |
+|-------|--------|---------------|--------------|--------|--------|
+| Olar (2019) JPR — Diffusion of Repression | Completed | Jack | Yes |  | OLS model |
+| Nyhan & Montgomery (2015) JoP — Connecting the Candidates | Completed | Zihuan | Yes | Block dummies alone explain Wy (neighbors' avg strategy): Risk-taking R²=0.41, Issue ownership R²=0.76 Linear | Regression Model  |
+| Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 1: Democracy & Social Requisites) | Completed | Deki | Yes | High correlation between Wy and CLEAN blocks (R²=0.75) | Regression Model  |
+| Franzese, Hays & Cook (2016) PSRM — Spatial- and Spatiotemporal-Autoregressive Probit Models of Interdependent Binary Outcomes | Completed | Deki | Yes | Using MATLAB, CLEAN works so well that, after incorporating it, the significance (stars) of the initial rho values disappears for both models. The R-squared from the collinearity check does not seem to explain this, as it is only 0.270.  | SAR probit Model |
+| Metternich & Wucherpfennig (2020) — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Completed | Deki | Yes | rho values decreases  | SAR probit Model |
 
 
 ### Failed Replication
@@ -46,14 +47,16 @@ LabProject_diffusion/
 | Williams & Whitten (2014) AJPS — Don't Stand So Close to Me: Spatial Contagion & Party Competition | Completed | Deki | No | CLEAN blocks explain only ~2.2% of spatial lag | OLS model | 
 | Shiffman et al. (2022) ISQ — Social Construction of Global Health Priorities | Completed | Deki | No | changes in the rho value, but the statistical significance (stars) remains unchanged. block membership explains only 2.9% of Wy  | OLS models | 
 | Böhmelt et al. (2017) ISQ — Why Dominant Governing Parties Are Cross-Nationally Influential | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged Spatial OLS | SAR model | 
-| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged spatial  | Logit Model | 
-| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | changes in the rho value, but the statistical significance (stars) remains unchanged | Negative Binomial Model | 
+| Polo, S.M.T. (2020) JCR — How Terrorism Spreads: Emulation and the Diffusion of Ethnic and Ethnoreligious Terrorism | Completed | Zihuan | No |  changes in the rho value, but the statistical significance (stars) remains unchanged spatial  | Logit Model | 
+| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | No | changes in the rho value, but the statistical significance (stars) remains unchanged | Negative Binomial Model | 
+| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Completed | Deki | No | the network is too small to apply CLEAN package | 
+| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No | The rho value and the SE changed after clean-adjustment | 
 
 ### Paper Assigned
 | Paper | Assignee |
 | --- | --- |
-| Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Deki |
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Deki |
+
+
 
 ### Matrices missing
 | Paper | Status | 
@@ -66,17 +69,6 @@ LabProject_diffusion/
 | Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | Data available: logit model |
 | Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | Data available: logit analysis |
 
-### Papers needs Alex to check
-| Paper | Status |
-| --- | --- |
-| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
-| Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | Data Available: https://doi.org/10.7910/DVN/25769 |
-| Braithwaite, Braithwaite & Kucik (2015) JPR — The Conditioning Effect of Protest History on the Emulation of Nonviolent Conflict | Data available: https://www.prio.org/journals/jpr/replicationdata |
-| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/4HFPNH  |
-| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBBAE3 |
-| Cao (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
-| Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
-
 ### Papers waiting for cheking
 | Paper | Status |
 | --- | --- |
@@ -84,12 +76,19 @@ LabProject_diffusion/
 | Ambrosio (2010) ISP — Constructing a Framework of Authoritarian Diffusion | Data available: |
 | Oneal, Russett & Berbaum (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available: |
 | Murdoch & Sandler (2002) JCR — Economic Growth, Civil Wars, and Spatial Spillovers | Data available: |
+| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
+| Braithwaite, Braithwaite & Kucik (2015) JPR — The Conditioning Effect of Protest History on the Emulation of Nonviolent Conflict | Data available: https://www.prio.org/journals/jpr/replicationdata |
+| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/4HFPNH  |
+| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBBAE3 |
+| Cao (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
+| Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
 
 
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
-| Desmarais & Cranmer (2017) AJPS — Statistical Tools for Inferential Network Analysis | No Wy data |
+| Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | No spatial matrix |
+| Cranmer, Leifeld, McClurg, and Rolfe (2016) — Statistical Tools for Inferential Network Analysis | No Wy data |
 | How Parties React to Voter Transitions (year/journal TBD) | W matrix encodes co-exposure (vote loss weights) |
 | Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data Available: https://doi.org/10.7910/DVN/40FMWG, but no matrix |
 | Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
@@ -102,9 +101,8 @@ LabProject_diffusion/
 | Braithwaite (2010) JPR — Resisting Infection: How State Capacity Conditions Conflict Contagion | Data available: https://www.prio.org/journals/jpr/replicationdata not Sar Model |
 | Greenhill (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GLEY3J Ordered probit Model |
 | Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | https://dataverse.harvard.edu/dataset.xhtml;jsessionid=908396565f2ebd923f8676adfb0c?persistentId=doi%3A10.7910%2FDVN%2FHOLUME&version=&q=&fileTypeGroupFacet=%22Code%22&fileAccess=&fileTag=&fileSortField=&fileSortOrder= No Wy |
-| Desmarais & Cranmer (2022) ISQ — Modeling Diffusion through Network Analysis | FHC estimato Model |
+| Elkink & Grund (2022) — Modeling Diffusion through Network Analysis | FHC estimato Model |
 | Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence in Political Science Panel and Time-Series-Cross-Section Data | Method Paper |
-| Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Method Paper |
 | Neumayer & Plümper (2010) IO — Spatial Effects in Dyadic Data | Method Paper |
 | Miller (2016) JCR — Are Coups Really Contagious? | Logit Model, No Wy |
 | Barthel & Neumayer (2012) ISQ — Diffusion of Double Taxation Treaties | spatial Cox proportional hazard model |
