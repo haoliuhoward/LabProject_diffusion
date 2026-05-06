@@ -61,11 +61,11 @@ LabProject_diffusion/
 |-------|--------|
 | Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z no matrix |
 | Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | https://journals.sagepub.com/doi/full/10.1177/0022002715596772 No matrix |
-| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | No matrix |
-| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QDELJ8 logit model |
-| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | https://www.prio.org/journals/jpr/replicationdata logit model |
-| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model |
-| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis |
+| Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | Insu |
+| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | logit model, No Wy |
+| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | logit model, no Wy |
+| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model, Wx, not Wy |
+| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis, no Wy |
 
 ### Papers waiting for cheking
 | Paper | Status |
@@ -85,24 +85,26 @@ LabProject_diffusion/
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
-| Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | No spatial matrix |
-| Cranmer, Leifeld, McClurg, and Rolfe (2016) — Statistical Tools for Inferential Network Analysis | No Wy data |
-| How Parties React to Voter Transitions (year/journal TBD) | W matrix encodes co-exposure (vote loss weights) |
-| Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data Available: https://doi.org/10.7910/DVN/40FMWG, but no matrix |
-| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No matrix |
+| Miller (2016) JCR — Are Coups Really Contagious? | Logit Model, No Wy |
 | Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
-| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | No matrix |
+| Baccini & Dür (2011) BJPS — The New Regionalism and Policy Interdependence | Cox proportional hazards |
+| Zhukov & Stewart (2012) ISQ — Choosing Your Neighbors: Networks of Diffusion in International Relations | No Wy, probit model |
+| Forsberg, E. (2014) International Interactions — Transnational Transmitters: Ethnic Kinship Ties and Conflict Contagion 1946–2009 | No Wy |
+| Cranmer, Leifeld, McClurg, and Rolfe (2016) — Statistical Tools for Inferential Network Analysis | No Wy |
+| How Parties React to Voter Transitions (year/journal TBD) | No Wy |
+| Greenhill, B. (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | No Wy |
+| Dorff et al. (2023) BJPS — Network Competition and Civilian Targeting | No Wy |
+| Betz, Cook & Hollenbach (2021) PA — Bias from Network Misspecification Under Spatial Dependence | Method Paper |
 | Kinne (2024) ISQ — Network Context and Effectiveness of International Agreements |  No Wy |
 | Gannon (2025) AJPS — Complementarity in Alliances |  No Wy |
 | Böhmelt, Ruggeri & Pilster (2017) — Counterbalancing, Spatial Dependence & Peer Group Effects | Completed by Deki: The published significance is not the same as replicated significance (the original paper used STATA to apply empirical analysis) Checked by Zihuan, No time dimension | 
 | Elkins, Guzmán & Simmons (2006) IO — Competing for Capital: The Diffusion of Bilateral Investment Treaties, 1959–2000 | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QJQYPK Cox PH Model |
 | Braithwaite (2010) JPR — Resisting Infection: How State Capacity Conditions Conflict Contagion | Data available: https://www.prio.org/journals/jpr/replicationdata not Sar Model |
 | Greenhill (2010) ISQ — The Company You Keep: International Socialization and the Diffusion of Human Rights Norms | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GLEY3J Ordered probit Model |
-| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | https://dataverse.harvard.edu/dataset.xhtml;jsessionid=908396565f2ebd923f8676adfb0c?persistentId=doi%3A10.7910%2FDVN%2FHOLUME&version=&q=&fileTypeGroupFacet=%22Code%22&fileAccess=&fileTag=&fileSortField=&fileSortOrder= No Wy |
+| Madsen (2022) JOP — Diffusing Political Concerns among Danish Voters | No Wy |
 | Elkink & Grund (2022) — Modeling Diffusion through Network Analysis | FHC estimato Model |
 | Franzese & Hays (2007) PA — Spatial Econometric Models of Cross-Sectional Interdependence in Political Science Panel and Time-Series-Cross-Section Data | Method Paper |
 | Neumayer & Plümper (2010) IO — Spatial Effects in Dyadic Data | Method Paper |
-| Miller (2016) JCR — Are Coups Really Contagious? | Logit Model, No Wy |
 | Barthel & Neumayer (2012) ISQ — Diffusion of Double Taxation Treaties | spatial Cox proportional hazard model |
 | Doten-Snitker, K. (2024) CPS — The Diffusion of Exclusion: Medieval Expulsions of Jews | Bayesian hierarchical logistic regression |
 | Ward, H. & John, P. (2013) PSRM — Competitive Learning in Yardstick Competition: Testing Models of Policy Diffusion With Performance Data | no time variation |
@@ -125,23 +127,22 @@ LabProject_diffusion/
 | Magee & Massoud (2022) II — Diffusion of Protests in the Arab Spring | Not SAR Model |
 | Kim, Liu & Desmarais (2022) PSRM — Spatial Modeling of Dyadic Geopolitical Interactions Between Moving Actors |  AMEN Model |
 | Böhmelt (2014) CMPS — The Spatial Contagion of International Mediation | No data |
-| Phillips (2014) CMPS — Civil War, Spillover and Neighbors' Military Spending | No Wy |
-| Bell, Clay & Murdie (2012) JoP — Neighborhood Watch: Spatial Effects of Human Rights INGOs | Not SAR Model |
-| Baccini & Dür (2011) BJPS — The New Regionalism and Policy Interdependence | Not SAR Model |
-| Zhukov & Stewart (2012) ISQ — Choosing Your Neighbors: Networks of Diffusion in International Relations | No Wy |
 | Brooks, Cunha & Mosley (2014) ISQ — Categories, Creditworthiness, and Contagion | ECM model |
 | Büyükkeles & Özel (2019) ISQ — Regulatory Convergence in the Financial Periphery | cross-sectional analysis, not a time panel |
-| Price (2018) ISQ — Diffusion Effect of Militant Leadership Decapitation | No Wy |
-| Gilardi (2021) AJPS — Policy Diffusion: The Issue-Definition Stage | No Wy |
 | Neumayer & Plümper (2012) CPS — Conditional Spatial Policy Dependence: Theory and Model Specification | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UVSMOV stcox (Cox proportional hazards / survival analysis), not a linear SAR model, and there is no standalone W matrix file |
-| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5O3EOW no spatial lag model and no W matrix |
-| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KYBEM4 no spatial lag model; uses dyadic logit; most matrices are static |
-| Lindstädt et al. (2017) PSRM — Diffusion in Congress | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CJZB8X no W matrix in the data and no rho to adjust |
 | Metternich, N.W., Minhas, S. & Ward, M.D. (2017) JCR — Firewall? or Wall on Fire? Conflict Contagion and the Role of Ethnic Networks | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002715603452 GBME model — Bayesian, MCMC, no  ρ  |
-| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002719826234 use AME models. There is no ρ in this paper |
 | Aidt & Leon-Ablan (2022) BJPS — Diffusion in Social Unrest (Swing Riots) | No time variation |
 | Gade et al. (2019) JPR — Fratricide in Rebel Movements | No time variation |
 | Franzese & Hays (2017) PA — Spatial Econometric Models of Cross-Sectional Interdependence | Methodological paper |
+| Phillips (2014) CMPS — Civil War, Spillover and Neighbors' Military Spending | No Wy |
+| Bell, Clay & Murdie (2012) JoP — Neighborhood Watch: Spatial Effects of Human Rights INGOs | Wx, Not SAR Model |
+---from here
+| Price (2018) ISQ — Diffusion Effect of Militant Leadership Decapitation | No Wy |
+| Gilardi (2021) AJPS — Policy Diffusion: The Issue-Definition Stage | No Wy |
+| Abramson, Carter & Ying (2022) APSR — Historical Border Changes, State Building, and Contemporary Trust in Europe | Data Available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5O3EOW no spatial lag model and no W matrix |
+| Sommerer & Tallberg (2019) IO — Diffusion Across International Organizations | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KYBEM4 no spatial lag model; uses dyadic logit; most matrices are static |
+| Lindstädt et al. (2017) PSRM — Diffusion in Congress | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CJZB8X no W matrix in the data and no rho to adjust |
+| Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002719826234 use AME models. There is no ρ in this paper |
 | Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
 ---already done before
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed by Deki. Very sparse network |
