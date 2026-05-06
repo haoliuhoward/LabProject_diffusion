@@ -52,11 +52,8 @@ LabProject_diffusion/
 | Franzese & Hays (2006) EUP — Strategic Interaction among EU Governments in Active-Labor-Market Policymaking | Completed | Deki | No | the network is too small to apply CLEAN package | Regression Model| 
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No |  | OLS Model | 
 
-### Paper Assigned
-| Paper | Assignee |
-| --- | --- |
 
-### Matrices missing
+### This Week's Check Results
 | Paper | Status | 
 |-------|--------|
 | Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z no matrix |
