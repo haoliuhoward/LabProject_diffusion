@@ -67,21 +67,6 @@ LabProject_diffusion/
 | Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model, Wx, not Wy |
 | Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis, no Wy |
 
-### Papers waiting for cheking
-| Paper | Status |
-| --- | --- |
-| Böhmelt & Bove (2019) EJPR — How Migration Policies Moderate the Diffusion of Terrorism | https://onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12339 |
-| Ambrosio (2010) ISP — Constructing a Framework of Authoritarian Diffusion | Data available: |
-| Oneal, Russett & Berbaum (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available: |
-| Murdoch & Sandler (2002) JCR — Economic Growth, Civil Wars, and Spatial Spillovers | Data available: |
-| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
-| Braithwaite, Braithwaite & Kucik (2015) JPR — The Conditioning Effect of Protest History on the Emulation of Nonviolent Conflict | Data available: https://www.prio.org/journals/jpr/replicationdata |
-| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/4HFPNH  |
-| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBBAE3 |
-| Cao (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
-| Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
-
-
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
@@ -144,6 +129,17 @@ LabProject_diffusion/
 | Lindstädt et al. (2017) PSRM — Diffusion in Congress | Data available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CJZB8X no W matrix in the data and no rho to adjust |
 | Gade et al. (2019) JCR — Networks of Cooperation (rebel alliances) | Data available: https://journals.sagepub.com/doi/full/10.1177/0022002719826234 use AME models. There is no ρ in this paper |
 | Cook, Hays & Franzese (2022) APSR — STADL Up! The Spatiotemporal Autoregressive Distributed Lag Model for TSCS Data Analysis | Reanalysis of Acemoglu et al. (2008) on Development and Democracy |
+---papers waiting for check
+| Böhmelt & Bove (2019) EJPR — How Migration Policies Moderate the Diffusion of Terrorism | https://onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12339 |
+| Ambrosio (2010) ISP — Constructing a Framework of Authoritarian Diffusion | Data available: |
+| Oneal, Russett & Berbaum (2003) ISQ — Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992 | Data available: |
+| Murdoch & Sandler (2002) JCR — Economic Growth, Civil Wars, and Spatial Spillovers | Data available: |
+| Metternich, N.W. & Wucherpfennig, J. (2020) International Interactions — Strategic Rebels: A Spatial Econometric Approach to Rebel Fighting Durations in Civil Wars | Data Available: https://doi.org/10.7910/DVN/XUVHCH |
+| Braithwaite, Braithwaite & Kucik (2015) JPR — The Conditioning Effect of Protest History on the Emulation of Nonviolent Conflict | Data available: https://www.prio.org/journals/jpr/replicationdata |
+| Lane (2016) JoP — The Intrastate Contagion of Ethnic Civil War | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/4HFPNH  |
+| Clay & Owsiak (2015) JoP — The Diffusion of International Border Agreements | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBBAE3 |
+| Cao (2010) ISQ — Networks and Capital Taxation Diffusion | Data available: https://www.isanet.org/Publications/ISQ/Replication-Data?doi=10.1093/isq/sqv023 |
+| Aidt, T., León, G. & Satchell, M. (2021) JoP — The Social Dynamics of Collective Action: Evidence from the Diffusion of the Swing Riots, 1830–31 | Data Available: https://doi.org/10.7910/DVN/VIXZD1 |
 ---already done before
 | Beck, Gleditsch & Beardsley (2006) ISQ — Space Is More than Geography (Table 2: Directed Export Flows) | Completed by Deki. Very sparse network |
 | Wibbels & Ahlquist (2011) ISQ — Trade, Development, and Social Insurance  |  No time variation |
