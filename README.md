@@ -53,20 +53,26 @@ LabProject_diffusion/
 | Franzese & Hays (2008) CPS — Interdependence in Comparative Politics | Completed | Deki | No |  | OLS Model | 
 
 
-### This Week's Check Results
+###     Completed but Not a Strong Candidate Paper
+| Paper | Status | Replicated By | CLEAN Works? | Reason | Model Used |
+|-------|--------|---------------|--------------|--------| --------|
+| Montgomery & Nyhan (2017) JoP — Congressional Staff Networks | Completed | Deki, Insu | No | Extremely sparse networks (all-staff density ≈ 0.115%, senior-staff density ≈ 0.025%)  | Bayesian model |  
+| Neumayer & Plümper (2010) CMPS — Galton's Problem and Contagion in International Terrorism along Civilizational Lines | Completed | Zihuan | No | too complicated model | Negative Binomial Model | 
+
+### Waiting for Explanation
 | Paper | Status | 
 |-------|--------|
-| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z no matrix |
-| Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | https://journals.sagepub.com/doi/full/10.1177/0022002715596772 No matrix |
 | Schleiter, Böhmelt, Ezrow & Lehrer (2021) WP — Social Democratic Party Exceptionalism and Transnational Policy Linkages | Insu |
-| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | logit model, No Wy |
-| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | logit model, no Wy |
-| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model, Wx, not Wy |
-| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis, no Wy |
 
 ### Bad candidates (Matrix, time-variation, method papers: TBD)
 | Paper | Status |
 | --- | --- |
+| Garcia & Wimpy (2016) PSRM — Does Information Lead to Emulation? | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CTRV5Z no matrix |
+| Goodliffe, J. & Hawkins, D. (2015) JCR — Dependence Networks and the Diffusion of Domestic Political Institutions | https://journals.sagepub.com/doi/full/10.1177/0022002715596772 No matrix |
+| Kathman (2010) ISQ — Civil War Contagion and Neighboring Interventions | logit model, No Wy |
+| Black (2013) JPR — When Have Violent Civil Conflicts Spread? | logit model, no Wy |
+| Jordana, Levi-Faur & Fernández-i-Marín (2011) CPS — The Global Diffusion of Regulatory Agencies | logit model, Wx, not Wy |
+| Kathman (2011) JCR — Civil War Diffusion and Regional Motivations for Intervention | logit analysis, no Wy |
 | Miller (2016) JCR — Are Coups Really Contagious? | Logit Model, No Wy |
 | Dorff, Gallop & Minhas (2022) ISQ — What Lies Beneath: Using Latent Networks to Improve Spatial Predictions | No matrix |
 | Baccini & Dür (2011) BJPS — The New Regionalism and Policy Interdependence | Cox proportional hazards |
